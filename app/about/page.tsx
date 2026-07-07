@@ -176,7 +176,12 @@ export default function About() {
         </div>
 
         {/* Team */}
-        <div className="mb-16">
+        <div 
+          className="mb-16 py-16 px-8 rounded-3xl bg-cover bg-center border border-border/20 shadow-sm"
+          style={{
+            backgroundImage: "url('/bg/Olivion Interior Team Background.png')",
+          }}
+        >
           <p className="text-primary tracking-[0.3em] text-xs uppercase mb-4 font-medium text-center">
             The People
           </p>

@@ -47,12 +47,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-black font-serif text-xl">
-                G
-              </div>
-              <span className="font-serif text-xl tracking-[0.2em] text-background">
-                GROWMORE
-              </span>
+              <img
+                src="/gm-logo.png"
+                alt="Grow More"
+                className="h-12 w-auto object-contain bg-white p-1.5 rounded-md"
+              />
             </div>
             <p className="text-background/50 font-light leading-relaxed mb-8 max-w-xs text-sm">
               Designing timeless and luxurious spaces that reflect your unique personality.

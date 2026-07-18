@@ -179,7 +179,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 flex items-center transition-transform hover:scale-[1.02]">
               <img
-                src="/gm-logo.png"
+                src="/logo.png"
                 alt="Grow More Interior"
                 className="h-9 sm:h-11 md:h-12 object-contain transition-all"
               />
@@ -469,7 +469,7 @@ export default function Navbar() {
           <div className="p-4 flex items-center justify-between border-b border-gray-100">
             <Link href="/" onClick={closeDrawer}>
               <img
-                src="/gm-logo.png"
+                src="/logo.png"
                 alt="Grow More Interior"
                 className="h-9 w-auto object-contain"
               />

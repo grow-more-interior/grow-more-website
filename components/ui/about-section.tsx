@@ -212,7 +212,7 @@ export default function AboutSection3() {
               customVariants={revealVariants}
               className="mb-8"
             >
-              <p className="text-foreground font-light text-lg italic leading-relaxed">
+              <p className="text-foreground font-light text-lg leading-relaxed">
                 &quot;Luxury is found in the harmony between space and soul.&quot;
               </p>
             </TimelineContent>

@@ -94,7 +94,7 @@ export default function Blog() {
           style={{ fontSize: "clamp(2.5rem, 7vw, 7rem)" }}
         >
           Design{" "}
-          <span className="text-gradient-gold italic">Journal</span>
+          <span className="text-gradient-gold">Journal</span>
         </h1>
         <p className="text-muted-foreground text-center max-w-xl mx-auto font-light leading-relaxed mb-20">
           Expert insights, timeless principles, and the latest inspiration from our design

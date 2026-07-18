@@ -1,221 +1,60 @@
-import Image from "next/image";
-import CTASection from "@/components/CTASection";
-import { Paintbrush, Key, Map, Sofa } from "lucide-react";
-import type { Metadata } from "next";
+import { Callout, InfoCard, PageHero, StatsBand } from "../components/PageSections";
+import { leaders } from "../data/growmore";
 
-export const metadata: Metadata = {
-  title: "About Us — Grow More Interior",
-  description:
-    "Learn about Grow More Interior — a decade of luxury interior design, our philosophy, team, and services.",
-};
-
-const services = [
-  {
-    icon: Paintbrush,
-    title: "Interior Design",
-    description:
-      "From concept to completion, we craft stunning interiors that embody luxury, comfort, and functionality, tailored exquisitely to your lifestyle.",
-  },
-  {
-    icon: Key,
-    title: "Turnkey Solutions",
-    description:
-      "We handle every aspect of your project, from civil work and electrical to final styling. Move into your dream space without the hassle.",
-  },
-  {
-    icon: Map,
-    title: "Space Planning",
-    description:
-      "Optimizing your space for flow and function. We provide strategic layouts that maximize both the utility and aesthetic appeal of your property.",
-  },
-  {
-    icon: Sofa,
-    title: "Custom Furniture",
-    description:
-      "Bespoke furniture pieces designed and crafted to fit seamlessly into your space, using the finest materials and expert artisanship.",
-  },
-];
-
-const team = [
-  {
-    name: "Aatharva Raj Gupta",
-    role: "Founder & Creative Director",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    name: "Meera Sharma",
-    role: "Principal Architect",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    name: "Rahul Verma",
-    role: "Head of Interiors",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800",
-  },
-];
-
-const stats = [
-  { value: "12+", label: "Years of Excellence" },
-  { value: "250+", label: "Bespoke Projects" },
-  { value: "15+", label: "Global Awards" },
-  { value: "100%", label: "Client Satisfaction" },
-];
-
-export default function About() {
+export default function AboutPage() {
   return (
-    <div className="pt-32 min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 mb-24">
-        {/* Breadcrumb */}
-        <p className="text-primary tracking-[0.3em] text-xs uppercase mb-6 font-medium text-center">
-          About Us
-        </p>
+    <main className="bg-[#f7f4ee]">
+      <PageHero
+        eyebrow="About Us"
+        title="World-class designs, crafted locally in Nepal."
+        copy="Grow More designs premium interior concepts and coordinates turnkey styling guided by global aesthetics."
+      />
+      <StatsBand />
 
-        {/* Header */}
-        <h1
-          className="font-serif text-center mb-8 text-foreground font-normal text-balance"
-          style={{ fontSize: "clamp(2.5rem, 7vw, 7rem)" }}
-        >
-          A Decade of{" "}
-          <span className="text-gradient-gold italic">Design Excellence</span>
-        </h1>
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8 lg:py-20">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#C9A84C]">Our Story</p>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#1a1614] sm:text-4xl">A bespoke design process built for turnkey lifestyle value.</h2>
+          <div className="mt-6 space-y-5 text-base leading-8 text-gray-600">
+            <p>Grow More designs custom layouts for luxury residences, commercial spaces, retail showrooms, office spaces, and architectural projects.</p>
+            <p>We focus on premium woods, metals, custom lighting, smart layouts, and high-quality workmanship standards.</p>
+          </div>
+        </div>
+        <div className="grid gap-4">
+          <InfoCard title="Custom Projects" copy="Turnkey designs for premium apartments, independent villas, commercial workspaces, and hospitality spaces." />
+          <InfoCard title="Bespoke Furnishings" copy="Custom-made sofas, cabinetry, and kitchen setups manufactured locally at our state-of-the-art facility." />
+          <InfoCard title="Responsible Sourcing" copy="Water recycling, bio-gas usage, and zero-waste practices support an environmentally responsible production process." />
+        </div>
+      </section>
 
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto font-light leading-relaxed mb-20 text-lg">
-          Founded in 2012, Grow More Interior began with a clear vision: to create spaces that
-          elevate the human experience. We believe luxury lies in the seamless integration of form,
-          function, and personality.
-        </p>
+      <section className="bg-[#1a1614] px-4 py-16 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#C9A84C]">Our Vision</p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">Be the most preferred interior design studio.</h2>
+          </div>
+          <p className="text-base leading-8 text-white/75">We aim to offer innovative solutions, superior quality, and turnkey execution while shaping the identity of every home and workplace we touch.</p>
+        </div>
+      </section>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
-          {stats.map((stat) => (
-            <div key={stat.label} className="glass glass-gold p-8 text-center">
-              <span
-                className="block font-serif text-gradient-gold font-normal mb-2"
-                style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-              >
-                {stat.value}
-              </span>
-              <span className="text-xs uppercase tracking-widest text-muted-foreground font-light">
-                {stat.label}
-              </span>
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-10 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#C9A84C]">Leadership & Team</p>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#1a1614] sm:text-4xl">Our design and management team.</h2>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {leaders.map(([name, role]) => (
+            <div key={name} className="rounded-lg border border-gray-200 bg-white p-6 text-center shadow-sm">
+              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#e0d8cc] text-2xl font-extrabold text-[#1a1614]">
+                {name.split(" ").map((part) => part[0]).join("").slice(0, 2)}
+              </div>
+              <h3 className="text-lg font-bold text-[#1a1614]">{name}</h3>
+              <p className="mt-1 text-xs font-bold uppercase tracking-widest text-[#C9A84C]">{role}</p>
             </div>
           ))}
         </div>
-
-        {/* Story */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
-          <div className="aspect-[3/4] relative overflow-hidden rounded-2xl">
-            <Image
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=75&w=1200"
-              alt="Design Philosophy"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-1000"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-          </div>
-          <div>
-            <p className="text-primary tracking-[0.3em] text-xs uppercase mb-6 font-medium">
-              Our Story
-            </p>
-            <h2
-              className="font-serif text-foreground mb-8 font-normal"
-              style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
-            >
-              Crafting Spaces That Echo Your Unique Identity
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6 font-light">
-              Our multidisciplinary team of architects and interior designers works collaboratively,
-              ensuring every detail is thoughtfully curated. We don&apos;t just design rooms; we curate
-              lifestyles.
-            </p>
-            <p className="text-muted-foreground text-lg leading-relaxed font-light mb-8">
-              By deeply understanding our clients&apos; aspirations, we weave their personal stories into
-              the fabric of our designs — resulting in environments that feel intimately familiar yet
-              completely extraordinary.
-            </p>
-            <blockquote className="border-l-2 border-primary pl-6">
-              <p className="font-serif text-foreground text-xl italic font-normal">
-                &ldquo;Luxury is found in the harmony between space and soul.&rdquo;
-              </p>
-              <cite className="text-muted-foreground text-xs uppercase tracking-widest mt-3 block not-italic">
-                — Aatharva Raj Gupta, Founder
-              </cite>
-            </blockquote>
-          </div>
-        </div>
-
-        {/* Services */}
-        <div className="mb-32">
-          <p className="text-primary tracking-[0.3em] text-xs uppercase mb-4 font-medium text-center">
-            What We Offer
-          </p>
-          <h2
-            className="font-serif text-foreground text-center mb-16 font-normal"
-            style={{ fontSize: "clamp(1.8rem, 4vw, 3.5rem)" }}
-          >
-            Our <span className="text-gradient-gold italic">Expertise</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, i) => (
-              <div
-                key={i}
-                className="glass glass-gold p-8 hover:scale-[1.02] transition-transform duration-500 group"
-              >
-                <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <service.icon size={40} strokeWidth={1.25} />
-                </div>
-                <h3 className="font-serif text-foreground text-xl mb-3 group-hover:text-primary transition-colors duration-300 font-normal">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground font-light leading-relaxed text-sm">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Team */}
-        <div 
-          className="mb-16 py-16 px-8 rounded-3xl bg-cover bg-center border border-border/20 shadow-sm"
-          style={{
-            backgroundImage: "url('/bg/Olivion Interior Team Background.png')",
-          }}
-        >
-          <p className="text-primary tracking-[0.3em] text-xs uppercase mb-4 font-medium text-center">
-            The People
-          </p>
-          <h2
-            className="font-serif text-foreground text-center mb-16 font-normal"
-            style={{ fontSize: "clamp(1.8rem, 4vw, 3.5rem)" }}
-          >
-            Meet the <span className="text-gradient-gold italic">Team</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, i) => (
-              <div key={i} className="group text-center">
-                <div className="aspect-[3/4] relative mb-6 overflow-hidden rounded-2xl">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-                <h3 className="font-serif text-foreground text-xl mb-1 font-normal">
-                  {member.name}
-                </h3>
-                <p className="text-primary text-xs uppercase tracking-widest font-light">
-                  {member.role}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <CTASection />
-    </div>
+      </section>
+      <Callout />
+    </main>
   );
 }

@@ -70,7 +70,7 @@ export default function Services() {
               style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
             >
               Our{" "}
-              <span className="text-gradient-gold italic">Expertise</span>
+              <span className="text-gradient-gold">Expertise</span>
             </h2>
           </div>
           <Link

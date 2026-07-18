@@ -64,7 +64,7 @@ export default function FeaturedProjects() {
                 style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
               >
                 Featured{" "}
-                <span className="text-gradient-gold italic">Works</span>
+                <span className="text-gradient-gold">Works</span>
               </h2>
             </div>
             <Link

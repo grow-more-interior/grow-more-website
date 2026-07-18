@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-black font-serif italic text-xl">
+              <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-black font-serif text-xl">
                 G
               </div>
               <span className="font-serif text-xl tracking-[0.2em] text-background">

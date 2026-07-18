@@ -93,7 +93,7 @@ export default function Shop() {
           style={{ fontSize: "clamp(2.5rem, 7vw, 7rem)" }}
         >
           Curated{" "}
-          <span className="text-gradient-gold italic">Pieces</span>
+          <span className="text-gradient-gold">Pieces</span>
         </h1>
         <p className="text-muted-foreground text-center max-w-xl mx-auto font-light leading-relaxed mb-20">
           Handpicked by our design team — a collection of premium furniture, lighting, and décor
@@ -184,7 +184,7 @@ export default function Shop() {
             style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
           >
             Commission a{" "}
-            <span className="text-gradient-gold italic">Bespoke Piece</span>
+            <span className="text-gradient-gold">Bespoke Piece</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto font-light mb-8 leading-relaxed">
             Our craftsmen create custom furniture and décor pieces designed exclusively for your

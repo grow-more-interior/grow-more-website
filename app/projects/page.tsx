@@ -86,7 +86,7 @@ export default function Projects() {
           style={{ fontSize: "clamp(2.5rem, 7vw, 7rem)" }}
         >
           Selected{" "}
-          <span className="text-gradient-gold italic">Works</span>
+          <span className="text-gradient-gold">Works</span>
         </h1>
         <p className="text-muted-foreground text-center max-w-xl mx-auto font-light leading-relaxed mb-16">
           Explore our curated portfolio of luxury residential and commercial projects, each a

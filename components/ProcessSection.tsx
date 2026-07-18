@@ -63,7 +63,7 @@ export default function ProcessSection() {
             style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
           >
             Our Design{" "}
-            <span className="text-gradient-gold italic">Process</span>
+            <span className="text-gradient-gold">Process</span>
           </h2>
         </div>
 

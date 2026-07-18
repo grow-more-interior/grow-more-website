@@ -38,7 +38,7 @@ export const TestimonialsColumn = (props: {
                   className="p-8 rounded-3xl border border-border/40 bg-card shadow-lg shadow-black/5 max-w-sm w-full" 
                   key={`${index}-${i}`}
                 >
-                  <p className="text-muted-foreground font-light text-sm leading-relaxed mb-6 italic">
+                  <p className="text-muted-foreground font-light text-sm leading-relaxed mb-6">
                     &quot;{text}&quot;
                   </p>
                   <div className="flex items-center gap-3">

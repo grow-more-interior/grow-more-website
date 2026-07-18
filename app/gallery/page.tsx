@@ -77,7 +77,7 @@ export default function Gallery() {
           style={{ fontSize: "clamp(2.5rem, 7vw, 7rem)" }}
         >
           Visual{" "}
-          <span className="text-gradient-gold italic">Inspiration</span>
+          <span className="text-gradient-gold">Inspiration</span>
         </h1>
         <p className="text-muted-foreground text-center max-w-xl mx-auto font-light leading-relaxed mb-16">
           A curated collection of our finest spaces — each image a testament to the artistry and

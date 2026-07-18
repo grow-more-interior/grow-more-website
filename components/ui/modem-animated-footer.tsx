@@ -45,7 +45,7 @@ export const FooterComponent = ({
                     {brandName}
                   </span>
                 </div>
-                <p className="text-muted-foreground font-light text-center w-full max-w-lg px-4 sm:px-0 leading-relaxed italic">
+                <p className="text-muted-foreground font-light text-center w-full max-w-lg px-4 sm:px-0 leading-relaxed">
                   {brandDescription}
                 </p>
               </div>

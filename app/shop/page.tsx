@@ -99,7 +99,7 @@ export default function Shop() {
           <span className="text-gradient-gold">Pieces</span>
         </h1>
         <p className="text-muted-foreground text-center max-w-xl mx-auto font-light leading-relaxed mb-20">
-          Handpicked by our design team — a collection of premium furniture, lighting, and décor
+          Handpicked by our design team - a collection of premium furniture, lighting, and décor
           to elevate every corner of your home.
         </p>
 

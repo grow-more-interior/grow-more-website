@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ===================================================
-   GROWMORE INTERIOR — OpenClaw V4 Design System
+   GROWMORE INTERIOR - OpenClaw V4 Design System
    Pillar: 3D Glassmorphism + Luxury Serif
    =================================================== */
 
@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* ═══════════════════════════════════════════════
-   SURFACE SYSTEM — Glass, Cards
+   SURFACE SYSTEM - Glass, Cards
    ═══════════════════════════════════════════════ */
 
 .glass {
@@ -173,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ═══════════════════════════════════════════════
-   FLOATING ORBS — Background Atmosphere
+   FLOATING ORBS - Background Atmosphere
    ═══════════════════════════════════════════════ */
 
 .orb {
@@ -204,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ═══════════════════════════════════════════════
-   SCROLL REVEAL — Intersection Observer
+   SCROLL REVEAL - Intersection Observer
    ═══════════════════════════════════════════════ */
 
 .reveal {

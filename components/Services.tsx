@@ -16,7 +16,7 @@ const services = [
     icon: Key,
     title: "Turnkey Solutions",
     description:
-      "We handle every aspect of your project — civil, electrical, plumbing, and final styling — so you move into your dream space without the hassle.",
+      "We handle every aspect of your project, including civil, electrical, plumbing, and final styling, so you move into your dream space without the hassle.",
     tag: "End-to-End",
   },
   {
@@ -37,7 +37,7 @@ const services = [
     icon: Building2,
     title: "Commercial Design",
     description:
-      "Hotels, restaurants, offices and retail — we create commercial environments that drive engagement, embody brand values, and leave lasting impressions.",
+      "Hotels, restaurants, offices and retail spaces get commercial environments that drive engagement, embody brand values, and leave lasting impressions.",
     tag: "B2B",
   },
   {

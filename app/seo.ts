@@ -6,8 +6,10 @@ export const siteConfig = {
   phone: "+9779802364638",
   email: "info@growmoreinterior.com",
   address: "Uttar Dhoka, Kathmandu, Nepal",
+  latitude: 27.7172,
+  longitude: 85.324,
   description:
-    "Grow More Interior is a Kathmandu-based luxury interior design studio for turnkey residential, commercial, hospitality, retail, modular kitchen, wardrobe, lighting, and bespoke furniture projects across Nepal.",
+    "Grow More Interior is an interior design company in Kathmandu, Nepal for turnkey residential, commercial, hospitality, retail, modular kitchen, wardrobe, lighting, and bespoke furniture projects across Nepal.",
 };
 
 type SeoPage = {
@@ -35,6 +37,10 @@ export function createMetadata({
     title,
     description,
     keywords: [
+      "interior design company in Kathmandu",
+      "interior design company in Nepal",
+      "best interior design company in Kathmandu",
+      "interior company Kathmandu Nepal",
       "interior design Nepal",
       "interior designer Kathmandu",
       "luxury interior design",
@@ -90,6 +96,7 @@ export function createMetadata({
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "InteriorDesignBusiness",
+  "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   url: siteConfig.url,
   logo: `${siteConfig.url}/gm-logo.png`,
@@ -101,9 +108,31 @@ export const organizationJsonLd = {
     "@type": "PostalAddress",
     streetAddress: "Uttar Dhoka",
     addressLocality: "Kathmandu",
+    addressRegion: "Bagmati Province",
+    postalCode: "44600",
     addressCountry: "NP",
   },
-  areaServed: ["Kathmandu", "Lalitpur", "Pokhara", "Bardiya", "Nepal"],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: siteConfig.latitude,
+    longitude: siteConfig.longitude,
+  },
+  hasMap: "https://maps.google.com/maps?q=Uttar%20Dhoka%2C%20Kathmandu%2C%20Nepal",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "10:00",
+      closes: "19:00",
+    },
+  ],
+  areaServed: [
+    { "@type": "City", name: "Kathmandu" },
+    { "@type": "City", name: "Lalitpur" },
+    { "@type": "City", name: "Pokhara" },
+    { "@type": "AdministrativeArea", name: "Bagmati Province" },
+    { "@type": "Country", name: "Nepal" },
+  ],
   priceRange: "$$$",
   sameAs: [
     "https://www.facebook.com/growmore",
@@ -123,11 +152,79 @@ export const organizationJsonLd = {
 export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${siteConfig.url}/#website`,
   name: siteConfig.name,
   url: siteConfig.url,
+  publisher: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
   potentialAction: {
     "@type": "SearchAction",
     target: `${siteConfig.url}/products?search={search_term_string}`,
     "query-input": "required name=search_term_string",
   },
+};
+
+export const interiorDesignServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${siteConfig.url}/#interior-design-service`,
+  name: "Interior design company in Kathmandu and Nepal",
+  serviceType: "Interior design, turnkey interior execution, modular kitchen design, wardrobe design, lighting design, and custom furniture",
+  provider: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
+  areaServed: [
+    { "@type": "City", name: "Kathmandu" },
+    { "@type": "City", name: "Lalitpur" },
+    { "@type": "City", name: "Pokhara" },
+    { "@type": "Country", name: "Nepal" },
+  ],
+  availableChannel: {
+    "@type": "ServiceChannel",
+    serviceUrl: `${siteConfig.url}/contact`,
+    servicePhone: siteConfig.phone,
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Interior design services in Nepal",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential interior design in Kathmandu" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial interior design in Nepal" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Turnkey interior execution" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Modular kitchen and wardrobe design" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom furniture manufacturing" } },
+    ],
+  },
+};
+
+export const homeFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Which interior design company should I contact in Kathmandu?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Grow More Interior is a Kathmandu-based interior design company serving homes, apartments, offices, retail stores, restaurants, hotels, and hospitality spaces across Nepal.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does Grow More Interior handle turnkey interior projects in Nepal?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Grow More Interior handles planning, 3D design, material selection, modular production, site coordination, lighting, furniture, and final styling for turnkey residential and commercial projects.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which locations in Nepal does Grow More Interior serve?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Grow More Interior primarily serves Kathmandu and Lalitpur, with project consultation and execution available for Pokhara, Bardiya, and other Nepal locations based on scope.",
+      },
+    },
+  ],
 };

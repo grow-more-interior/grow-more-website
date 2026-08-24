@@ -80,7 +80,7 @@ export default function Gallery() {
           <span className="text-gradient-gold">Inspiration</span>
         </h1>
         <p className="text-muted-foreground text-center max-w-xl mx-auto font-light leading-relaxed mb-16">
-          A curated collection of our finest spaces — each image a testament to the artistry and
+          A curated collection of our finest spaces - each image a testament to the artistry and
           precision behind every project.
         </p>
 

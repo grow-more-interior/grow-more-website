@@ -4,7 +4,7 @@ description: Builds premium dark-mode websites for local businesses (gyms, clini
 ---
 
 # SKILL: OpenClaw Premium Design System V4
-### Built for AI Automation Agencies — by Hemant Kadam × OpenClaw Ecosystem 2026
+### Built for AI Automation Agencies - by Hemant Kadam × OpenClaw Ecosystem 2026
 
 ---
 
@@ -30,13 +30,13 @@ Every deployment MUST pick ONE primary pillar and use the others as accents only
 ```css
 :root {
   /* Foundation */
-  --clr-void:     #000000;   /* Pure black — main bg */
-  --clr-carbon:   #050505;   /* Near black — card bg */
+  --clr-void:     #000000;   /* Pure black - main bg */
+  --clr-carbon:   #050505;   /* Near black - card bg */
   --clr-graphite: #0D0D0D;   /* Section bg */
   --clr-smoke:    #1A1A1A;   /* Border, divider */
 
   /* Acid Accent Stack (Brutalist) */
-  --clr-acid:     #DFFF00;   /* Primary CTA — Acid Yellow */
+  --clr-acid:     #DFFF00;   /* Primary CTA - Acid Yellow */
   --clr-lime:     #CCFF00;   /* Hover state */
   --clr-volt:     #AAFF00;   /* Active / pressed */
 
@@ -55,11 +55,11 @@ Every deployment MUST pick ONE primary pillar and use the others as accents only
 
 ### Trending 2026 Color Combos
 ```
-Combo 1 — "Acid Agency":    #000000 + #DFFF00 + #FFFFFF
-Combo 2 — "Glacier SaaS":   #050505 + #00FFFF + #BF5AF2
-Combo 3 — "Ember Studio":   #0D0D0D + #FF6B35 + #DFFF00
-Combo 4 — "Void Minimal":   #000000 + #FFFFFF + #1A1A1A (text only)
-Combo 5 — "Chrome Vibe":    #0A0A0A + #C0C0C0 (silver) + #FF3366
+Combo 1 - "Acid Agency":    #000000 + #DFFF00 + #FFFFFF
+Combo 2 - "Glacier SaaS":   #050505 + #00FFFF + #BF5AF2
+Combo 3 - "Ember Studio":   #0D0D0D + #FF6B35 + #DFFF00
+Combo 4 - "Void Minimal":   #000000 + #FFFFFF + #1A1A1A (text only)
+Combo 5 - "Chrome Vibe":    #0A0A0A + #C0C0C0 (silver) + #FF3366
 ```
 
 ---
@@ -264,14 +264,14 @@ Combo 5 — "Chrome Vibe":    #0A0A0A + #C0C0C0 (silver) + #FF3366
 
 ### Entrance Animations (Scroll-Triggered)
 ```css
-/* Base state — hidden */
+/* Base state - hidden */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
 }
 
-/* Active state — triggered by IntersectionObserver */
+/* Active state - triggered by IntersectionObserver */
 .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
@@ -282,7 +282,7 @@ Combo 5 — "Chrome Vibe":    #0A0A0A + #C0C0C0 (silver) + #FF3366
 ```
 
 ```js
-// Scroll reveal — add to every deployment
+// Scroll reveal - add to every deployment
 const observer = new IntersectionObserver(
   (entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add('in-view')),
   { threshold: 0.15 }
@@ -314,7 +314,7 @@ document.querySelectorAll('.btn-magnetic').forEach(btn => {
 class TextScramble {
   constructor(el) {
     this.el = el;
-    this.chars = '!<>-_\\/[]{}—=+*^?#________';
+    this.chars = '!<>-_\\/[]{} - =+*^?#________';
     this.update = this.update.bind(this);
   }
   setText(newText) {
@@ -446,7 +446,7 @@ class TextScramble {
 
 ### Grain Noise Overlay (Premium Finish)
 ```css
-/* grain.svg — embed as data URI */
+/* grain.svg - embed as data URI */
 .noise {
   position: fixed;
   inset: 0;
@@ -683,5 +683,5 @@ npx vercel --prod --yes --public
 
 ---
 
-*OpenClaw Design System V4 — Hemant Kadam × OpenClaw Ecosystem 2026*
+*OpenClaw Design System V4 - Hemant Kadam × OpenClaw Ecosystem 2026*
 *"We don't build websites. We build conversion machines."*

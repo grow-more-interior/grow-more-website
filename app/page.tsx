@@ -8,13 +8,18 @@ import CTASection from "@/components/CTASection";
 import Services from "@/components/Services";
 import ProcessSection from "@/components/ProcessSection";
 import StatsTicker from "@/components/StatsTicker";
-import { createMetadata } from "./seo";
+import LocalSeoSection from "@/components/LocalSeoSection";
+import { createMetadata, homeFaqJsonLd, interiorDesignServiceJsonLd } from "./seo";
 
 export const metadata = createMetadata({
-  title: "Luxury Interior Design in Kathmandu | Grow More Interior Nepal",
+  title: "Interior Design Company in Kathmandu, Nepal | Grow More Interior",
   description:
-    "Grow More Interior creates turnkey luxury homes, modular kitchens, wardrobes, commercial interiors, lighting plans, and bespoke furniture for clients across Kathmandu and Nepal.",
+    "Grow More Interior is an interior design company in Kathmandu, Nepal for turnkey home interiors, office design, modular kitchens, wardrobes, lighting, and custom furniture.",
   keywords: [
+    "interior design company in Kathmandu",
+    "interior design company in Nepal",
+    "best interior design company in Kathmandu",
+    "interior company in Nepal",
     "luxury interior design Kathmandu",
     "turnkey interiors Nepal",
     "home renovation Kathmandu",
@@ -25,8 +30,19 @@ export const metadata = createMetadata({
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(interiorDesignServiceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }}
+      />
       <Hero />
       <StatsTicker />
+      <LocalSeoSection />
       <AboutPreview />
       <Services />
       <FeaturedProjects />

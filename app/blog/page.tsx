@@ -40,7 +40,7 @@ const posts = [
     id: 3,
     title: "Curating a Minimalist Masterpiece",
     excerpt:
-      "Embracing simplicity without sacrificing warmth — a guide to sophisticated minimalism in modern interiors.",
+      "Embracing simplicity without sacrificing warmth - a guide to sophisticated minimalism in modern interiors.",
     date: "Apr 10, 2026",
     readTime: "5 min read",
     category: "Minimalism",
@@ -51,7 +51,7 @@ const posts = [
     id: 4,
     title: "Materials That Define Luxury",
     excerpt:
-      "From Calacatta marble to brushed brass — understanding how material selection elevates a space from ordinary to extraordinary.",
+      "From Calacatta marble to brushed brass - understanding how material selection elevates a space from ordinary to extraordinary.",
     date: "Mar 25, 2026",
     readTime: "7 min read",
     category: "Materials",
@@ -73,7 +73,7 @@ const posts = [
     id: 6,
     title: "Biophilic Design: Bringing Nature In",
     excerpt:
-      "How incorporating natural elements — wood, stone, living plants, and natural light — creates spaces that promote wellbeing.",
+      "How incorporating natural elements - wood, stone, living plants, and natural light - creates spaces that promote wellbeing.",
     date: "Feb 28, 2026",
     readTime: "6 min read",
     category: "Wellness Design",

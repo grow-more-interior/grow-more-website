@@ -8,7 +8,7 @@ const steps = [
     number: "01",
     title: "Discovery Call",
     description:
-      "We begin with an in-depth consultation to understand your vision, lifestyle, budget, and timeline. No cookie-cutter templates — every project starts with listening.",
+      "We begin with an in-depth consultation to understand your vision, lifestyle, budget, and timeline. No cookie-cutter templates, every project starts with listening.",
   },
   {
     number: "02",
@@ -26,7 +26,7 @@ const steps = [
     number: "04",
     title: "Execution",
     description:
-      "Our project managers oversee every craftsman and contractor, ensuring flawless execution to the finest detail — on time and on budget.",
+      "Our project managers oversee every craftsman and contractor, ensuring flawless execution to the finest detail, on time and on budget.",
   },
   {
     number: "05",

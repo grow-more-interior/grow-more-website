@@ -19,7 +19,11 @@ const staticRoutes = [
   ["dashain", 0.85, "weekly"],
   ["contact", 0.9, "monthly"],
   ["enquiry", 0.9, "monthly"],
+  ["privacy-policy", 0.25, "yearly"],
 ] as const;
+
+const blogRoutes = ["1", "2", "3", "4", "5", "6"] as const;
+const projectRoutes = ["1", "2", "3", "4", "5", "6"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -38,5 +42,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: [collection.image],
   }));
 
-  return [...pages, ...collectionPages];
+  const blogPages = blogRoutes.map((slug) => ({
+    url: `${siteConfig.url}/blog/${slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.65,
+  }));
+
+  const projectPages = projectRoutes.map((id) => ({
+    url: `${siteConfig.url}/projects/${id}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.72,
+  }));
+
+  return [...pages, ...collectionPages, ...blogPages, ...projectPages];
 }

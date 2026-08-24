@@ -121,12 +121,12 @@ export default function Footer() {
           <p>
             Crafted with care by{" "}
             <a
-              href="https://aditya-gupta.com.np/"
+              href="https://aadii.design"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"
             >
-              Aadi
+              Aadi Design Studio
             </a>
           </p>
           <div className="flex gap-6">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { createMetadata } from "@/app/seo";
 
 // Simulated fetch based on slug/id
 function getPost(slug: string) {
@@ -8,13 +9,27 @@ function getPost(slug: string) {
     slug,
     title: "10 Timeless Design Trends for 2026",
     content: "When it comes to luxury interior design, the word 'trend' can sometimes feel antithetical to the goal of creating a timeless space. However, the best design trends are those that evolve organically from a desire for comfort, sustainability, and personal expression. This year, we are seeing a shift towards spaces that feel grounded, tactile, and inherently calming. We explore ten trends that are here to stay.",
-    date: "Mars 15, 2026",
-    author: "Jane Doe",
+    date: "May 15, 2026",
+    author: "Grow More Design Studio",
     heroImage: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2560",
   };
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPost(slug);
+
+  return createMetadata({
+    title: `${post.title} | Grow More Interior Blog`,
+    description:
+      "A detailed Grow More Interior guide to timeless luxury interiors, rich textures, bespoke furniture, layered lighting, and practical styling decisions for refined homes.",
+    path: `/blog/${slug}`,
+    image: post.heroImage,
+    keywords: ["luxury interior design trends", "interior design blog Nepal", "timeless interiors", "bespoke furniture"],
+  });
+}
+
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPost(slug);
 
@@ -30,7 +45,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
         <div className="text-center mb-16">
           <span className="text-[var(--color-primary)] text-xs uppercase tracking-widest font-semibold mb-4 block">
-            {post.date} &mdash; By {post.author}
+            {post.date} - By {post.author}
           </span>
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-12">
             {post.title}
@@ -64,6 +79,14 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           <h2 className="text-3xl mt-12 mb-6 font-serif">2. Artisanal & Bespoke Elements</h2>
           <p className="text-gray-400 leading-relaxed mb-6 font-light">
             Mass-produced items are giving way to unique pieces crafted significantly by skilled artisans. Whether it&apos;s a hand-blown glass chandelier or a custom-carved marble dining table, these pieces serve as the focal point of the room.
+          </p>
+          <h2 className="text-3xl mt-12 mb-6 font-serif">3. Storage That Disappears</h2>
+          <p className="text-gray-400 leading-relaxed mb-6 font-light">
+            Modern luxury homes need generous storage without visual clutter. Integrated wardrobes, concealed utility zones, appliance garages, fluted wall panels, and built-in display niches keep everyday life organized while preserving a calm architectural rhythm.
+          </p>
+          <h2 className="text-3xl mt-12 mb-6 font-serif">4. Layered Lighting Plans</h2>
+          <p className="text-gray-400 leading-relaxed mb-6 font-light">
+            A complete lighting plan combines cove lighting, directional task lights, wall washers, pendant features, and dimmable ambience. The best interiors change mood easily for work, hosting, family time, and quiet evenings.
           </p>
         </div>
       </div>

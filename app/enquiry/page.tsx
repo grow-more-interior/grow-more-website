@@ -1,5 +1,14 @@
 import { Callout, PageHero } from "../components/PageSections";
 import EnquiryForm from "./EnquiryForm";
+import { createMetadata } from "../seo";
+
+export const metadata = createMetadata({
+  title: "Request Interior Design Consultation | Grow More Interior Nepal",
+  description:
+    "Request layouts, budgets, pricing, site measurement, 3D visualization, modular kitchen plans, wardrobe design, and turnkey interior consultation from Grow More.",
+  path: "/enquiry",
+  keywords: ["interior design enquiry Nepal", "request interior design consultation", "turnkey interior pricing Kathmandu"],
+});
 
 export default function EnquiryPage() {
   return (

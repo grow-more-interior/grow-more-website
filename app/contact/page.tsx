@@ -1,10 +1,19 @@
-import { PageHero } from "../components/PageSections";
+import { FAQSection, PageHero } from "../components/PageSections";
 import EnquiryForm from "../enquiry/EnquiryForm";
+import { createMetadata } from "../seo";
+
+export const metadata = createMetadata({
+  title: "Contact Interior Designers in Kathmandu | Grow More Interior",
+  description:
+    "Contact Grow More Interior for home interior design, office design, modular kitchen, wardrobe, lighting, furniture, and turnkey renovation enquiries in Nepal.",
+  path: "/contact",
+  keywords: ["contact interior designer Kathmandu", "interior design consultation Nepal", "home renovation enquiry Kathmandu"],
+});
 
 export default function ContactPage() {
   return (
     <main className="bg-[#f7f4ee]">
-      <PageHero eyebrow="Contact Us" title="Let us build your dream space." copy="Reach out for inquiries, appointments, career opportunities or direct assistance." />
+      <PageHero eyebrow="Contact Us" title="Let us build your dream space." copy="Reach out for residential interiors, office fit-outs, modular kitchens, wardrobes, lighting plans, furniture commissions, appointments, career opportunities, or direct assistance." />
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mb-10 grid gap-5 md:grid-cols-3">
           <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
@@ -25,6 +34,15 @@ export default function ContactPage() {
           <EnquiryForm />
         </div>
       </section>
+      <FAQSection
+        eyebrow="Before You Visit"
+        title="Consultation details"
+        items={[
+          ["What should I bring for a design consultation?", "Bring floor plans, room measurements, photos or videos of the site, inspiration images, approximate budget, timeline, and a list of must-have functions."],
+          ["Can I schedule a site visit?", "Yes. Share your location and project scope through the enquiry form, and the Grow More team will coordinate a measurement visit or design consultation."],
+          ["Do you handle commercial interiors?", "Yes. We design offices, retail stores, hospitality spaces, restaurants, showrooms, and branded customer experience areas."],
+        ]}
+      />
     </main>
   );
 }

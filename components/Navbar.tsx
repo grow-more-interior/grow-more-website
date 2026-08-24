@@ -35,6 +35,19 @@ const shopByLook = [
   { name: "Japandi", href: "/products?look=Japandi" },
 ];
 
+type SearchResult = {
+  id: string;
+  slug: string;
+  name: string;
+  collection: {
+    name: string;
+  };
+  size: string;
+  image: {
+    url: string;
+  };
+};
+
 export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,24 +58,24 @@ export default function Navbar() {
 
   // Desktop search states
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
   // Mobile search states
   const [mobileSearchQuery, setMobileSearchQuery] = useState("");
-  const [mobileSearchResults, setMobileSearchResults] = useState<any[]>([]);
+  const [mobileSearchResults, setMobileSearchResults] = useState<SearchResult[]>([]);
   const [isMobileSearching, setIsMobileSearching] = useState(false);
 
   // Filter search results client-side
   useEffect(() => {
     if (!searchQuery.trim()) {
-      setSearchResults([]);
-      return;
+      const emptySearch = setTimeout(() => setSearchResults([]), 0);
+      return () => clearTimeout(emptySearch);
     }
 
-    setIsSearching(true);
+    const startSearch = setTimeout(() => setIsSearching(true), 0);
     const delayDebounceFn = setTimeout(() => {
       const query = searchQuery.toLowerCase();
       const results = collections.filter(item => 
@@ -81,17 +94,20 @@ export default function Navbar() {
       setIsSearching(false);
     }, 200);
 
-    return () => clearTimeout(delayDebounceFn);
+    return () => {
+      clearTimeout(startSearch);
+      clearTimeout(delayDebounceFn);
+    };
   }, [searchQuery]);
 
   // Filter mobile search results client-side
   useEffect(() => {
     if (!mobileSearchQuery.trim()) {
-      setMobileSearchResults([]);
-      return;
+      const emptySearch = setTimeout(() => setMobileSearchResults([]), 0);
+      return () => clearTimeout(emptySearch);
     }
 
-    setIsMobileSearching(true);
+    const startSearch = setTimeout(() => setIsMobileSearching(true), 0);
     const delayDebounceFn = setTimeout(() => {
       const query = mobileSearchQuery.toLowerCase();
       const results = collections.filter(item => 
@@ -110,7 +126,10 @@ export default function Navbar() {
       setIsMobileSearching(false);
     }, 200);
 
-    return () => clearTimeout(delayDebounceFn);
+    return () => {
+      clearTimeout(startSearch);
+      clearTimeout(delayDebounceFn);
+    };
   }, [mobileSearchQuery]);
 
   // Close search dropdown on click outside
@@ -395,7 +414,7 @@ export default function Navbar() {
                       </div>
                     ) : (
                       <div className="p-4 text-center text-xs text-gray-500">
-                        No collections found matching "{searchQuery}"
+                        No collections found matching &quot;{searchQuery}&quot;
                       </div>
                     )}
                   </div>

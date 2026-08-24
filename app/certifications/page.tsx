@@ -1,4 +1,13 @@
 import { Callout, PageHero } from "../components/PageSections";
+import { createMetadata } from "../seo";
+
+export const metadata = createMetadata({
+  title: "Interior Quality Certifications | Grow More Interior Nepal",
+  description:
+    "Review Grow More Interior quality certifications, workmanship standards, environmental practices, and material compliance for turnkey interior projects.",
+  path: "/certifications",
+  keywords: ["interior quality certification Nepal", "ISO interior company", "certified interior designers Nepal"],
+});
 
 const certifications = [
   ["ISO 9001:2015", "Quality Management certification for our design consultation, modular manufacturing, and turnkey project execution."],
@@ -19,6 +28,17 @@ export default function CertificationsPage() {
             <p className="mt-3 text-sm leading-7 text-gray-600">{copy}</p>
           </div>
         ))}
+      </section>
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#C9A84C]">Quality Assurance</p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight text-[#1a1614] sm:text-4xl">
+            Our standards protect the beauty, safety, and durability of every interior project.
+          </h2>
+          <p className="mt-5 max-w-3xl text-sm leading-7 text-gray-600">
+            Certification-led workflows help the team document material choices, production tolerances, site checks, environmental responsibility, and handover quality. This gives homeowners, developers, and commercial clients a clearer view of what is being built and why it will last.
+          </p>
+        </div>
       </section>
       <Callout />
     </main>

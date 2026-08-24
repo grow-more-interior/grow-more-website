@@ -5,9 +5,12 @@ import type { Metadata } from "next";
 import { ShoppingBag, Star, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shop — Grow More Interior",
+  title: "Curated Furniture, Lighting & Decor in Nepal | Grow More Interior",
   description:
-    "Shop our exclusive collection of curated home décor, premium furniture, and design accessories — handpicked by our interior designers.",
+    "Shop designer furniture, lighting, textiles, decor, and bespoke interior accessories curated by Grow More Interior for premium homes and commercial spaces in Nepal.",
+  alternates: {
+    canonical: "/shop",
+  },
 };
 
 const products = [

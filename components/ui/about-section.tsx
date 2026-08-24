@@ -225,7 +225,7 @@ export default function AboutSection3() {
               onClick={() => window.location.href = '/contact'}
               className="bg-primary hover:bg-foreground hover:text-background text-black flex items-center gap-3 transition-all duration-500 px-8 py-4 rounded-full font-light tracking-widest text-xs shadow-xl shadow-primary/10 group active:scale-95 cursor-pointer"
             >
-              Let's Collaborate <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              Let&apos;s Collaborate <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </TimelineContent>
           </div>
         </div>

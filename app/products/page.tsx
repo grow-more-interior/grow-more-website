@@ -1,13 +1,22 @@
-import { Callout, CollectionGrid, PageHero, SectionHeader } from "../components/PageSections";
+import { Callout, CollectionGrid, FAQSection, PageHero, SectionHeader } from "../components/PageSections";
 import { collections, spaces } from "../data/growmore";
+import { createMetadata } from "../seo";
+
+export const metadata = createMetadata({
+  title: "Interior Design Services & Collections in Nepal | Grow More",
+  description:
+    "Explore Grow More Interior design collections for living rooms, bedrooms, kitchens, wardrobes, offices, retail spaces, hospitality, and turnkey homes in Nepal.",
+  path: "/products",
+  keywords: ["interior design services Nepal", "modular kitchen design Nepal", "wardrobe design Kathmandu", "commercial interiors Nepal"],
+});
 
 export default function ProductsPage() {
   return (
     <main className="bg-[#f7f4ee]">
       <PageHero
         eyebrow="Design Collections"
-        title="Turnkey design and style options."
-        copy="Explore interior concepts by design style, space type, and look. We specialize in residential, commercial, and turnkey design."
+        title="Turnkey interior design services and style options."
+        copy="Explore interior concepts by design style, space type, material palette, and execution scope. We specialize in residential, commercial, modular, hospitality, and turnkey design in Nepal."
       />
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader eyebrow="Eight Collections" title="Browse by design style" copy="From modern minimalist duplexes to high-end commercial spaces, each concept is tailored to your brand or family lifestyle." />
@@ -40,6 +49,38 @@ export default function ProductsPage() {
           ))}
         </div>
       </section>
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="What Is Included"
+            title="Complete interior packages for real homes and businesses"
+            copy="Every package can include site measurement, concept boards, 2D layouts, 3D visualization, furniture drawings, modular production, material procurement, site supervision, installation, and final styling."
+          />
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Modular Kitchens", "Ergonomic work triangles, durable counters, soft-close shutters, pantry systems, lighting, and appliance-ready layouts."],
+              ["Wardrobes & Storage", "Custom wardrobes, walk-in closets, vanity storage, hidden utility zones, and premium hardware selection."],
+              ["False Ceiling & Lighting", "Layered ceiling concepts, cove lighting, task lights, accent fixtures, and mood-based switching plans."],
+              ["Commercial Fit-Outs", "Reception areas, workstations, cabins, retail display, hospitality ambience, and brand-led material palettes."],
+            ].map(([title, copy]) => (
+              <article key={title} className="rounded-lg border border-gray-200 bg-[#f7f4ee] p-6">
+                <h3 className="text-lg font-bold text-[#1a1614]">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-gray-600">{copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <FAQSection
+        eyebrow="Interior Design FAQ"
+        title="Answers for homeowners, offices, and retail clients"
+        items={[
+          ["What does a turnkey interior design package include?", "A turnkey package can include measurement, space planning, design concepts, 3D views, material selection, modular production, site coordination, furniture, lighting, decor, and final handover."],
+          ["Can Grow More design only one room?", "Yes. We can design single rooms such as living rooms, kitchens, bedrooms, wardrobes, bathrooms, offices, reception areas, and retail display zones."],
+          ["Do you provide custom furniture?", "Yes. Grow More creates bespoke sofas, beds, tables, wardrobes, cabinetry, counters, vanities, display units, and storage systems sized for your space."],
+          ["Which areas do you serve?", "We primarily serve Kathmandu and Lalitpur, with project consultation and execution available for Pokhara, Bardiya, and other Nepal locations based on scope."],
+        ]}
+      />
       <Callout />
     </main>
   );

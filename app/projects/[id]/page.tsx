@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { createMetadata } from "@/app/seo";
 
 // Simulated fetch based on ID
 function getProject(id: string) {
@@ -21,7 +22,20 @@ function getProject(id: string) {
   };
 }
 
-export default async function ProjectDetail({ params }: { params: { id: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const project = getProject(id);
+
+  return createMetadata({
+    title: `${project.title} Interior Design Project | Grow More Portfolio`,
+    description: `${project.description} View project scope, location, materials, and gallery from the Grow More Interior portfolio.`,
+    path: `/projects/${id}`,
+    image: project.heroImage,
+    keywords: [project.category, project.location, "interior design project", "turnkey interiors"],
+  });
+}
+
+export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const project = getProject(id);
 
@@ -72,6 +86,18 @@ export default async function ProjectDetail({ params }: { params: { id: string }
             <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-8">
               {project.description}
             </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                ["Planning", "Circulation mapping, furniture scale, ceiling rhythm, and view-led zoning."],
+                ["Materials", "Premium stone, veneer, soft upholstery, warm metal accents, and durable finishes."],
+                ["Execution", "Coordinated civil work, custom furniture, lighting installation, styling, and handover."],
+              ].map(([title, copy]) => (
+                <div key={title} className="border border-white/10 p-5">
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--color-primary)]">{title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-gray-400">{copy}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

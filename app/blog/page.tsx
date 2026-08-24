@@ -5,9 +5,12 @@ import type { Metadata } from "next";
 import { ArrowUpRight, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Design Journal — Grow More Interior",
+  title: "Interior Design Blog & Home Styling Journal | Grow More Interior",
   description:
-    "Expert insights, design trends, and inspiration from the Grow More Interior design team.",
+    "Read Grow More Interior articles on luxury home design, lighting, modular kitchens, materials, space planning, commercial interiors, and styling ideas for Nepal.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 const posts = [

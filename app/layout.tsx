@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import ContactFAB from "@/components/ContactFAB";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ScrollRevealInit from "@/components/ScrollRevealInit";
+import { createMetadata, organizationJsonLd, siteConfig, websiteJsonLd } from "./seo";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -34,14 +35,24 @@ const whyteInktrap = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Grow More Interior — Designing Timeless Spaces",
-  description:
-    "Grow More Interior is a premium luxury interior design firm specialising in bespoke residential and commercial spaces. Transform your space with award-winning designers.",
-  keywords: "interior design, luxury interiors, bespoke design, residential design, commercial interiors",
-  openGraph: {
-    title: "Grow More Interior — Designing Timeless Spaces",
-    description: "A premium interior design firm specialising in luxury, modern, and elegant spaces.",
-    type: "website",
+  ...createMetadata({
+    title: "Interior Design in Kathmandu, Nepal | Grow More Interior",
+    description: siteConfig.description,
+    keywords: [
+      "interior design Kathmandu",
+      "home interior design Nepal",
+      "commercial interior designer Nepal",
+      "bespoke furniture Kathmandu",
+    ],
+  }),
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
   },
 };
 
@@ -68,6 +79,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <script
+            type="application/ld+json"
+            suppressHydrationWarning
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          />
+          <script
+            type="application/ld+json"
+            suppressHydrationWarning
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          />
           <main className="flex-grow">{children}</main>
           <Footer />
           <ContactFAB />

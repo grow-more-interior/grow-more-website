@@ -1,4 +1,13 @@
 import { PageHero } from "../components/PageSections";
+import { createMetadata } from "../seo";
+
+export const metadata = createMetadata({
+  title: "Privacy Policy | Grow More Interior",
+  description:
+    "Read how Grow More Interior handles enquiry details, contact information, career applications, and project consultation data.",
+  path: "/privacy-policy",
+  noIndex: true,
+});
 
 export default function PrivacyPolicyPage() {
   return (

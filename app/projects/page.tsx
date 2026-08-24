@@ -163,6 +163,30 @@ export default function Projects() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        <section className="mt-20 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-primary tracking-[0.3em] text-xs uppercase mb-4 font-medium">
+              Portfolio Scope
+            </p>
+            <h2 className="text-foreground text-3xl md:text-4xl font-bold tracking-tight">
+              Residential, commercial, retail, and hospitality interiors with turnkey coordination.
+            </h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              ["Home Interiors", "Luxury apartments, villas, penthouses, living rooms, kitchens, wardrobes, bedrooms, and custom furniture layouts."],
+              ["Commercial Spaces", "Corporate offices, reception areas, meeting rooms, retail display, restaurants, boutique stores, and hospitality ambience."],
+              ["Execution Details", "Civil coordination, electrical planning, false ceiling, lighting, modular installation, furniture production, and styling."],
+              ["Client Outcomes", "Better flow, premium finishes, practical storage, stronger brand presence, and a space that feels complete at handover."],
+            ].map(([title, copy]) => (
+              <article key={title} className="glass glass-gold p-6">
+                <h3 className="text-foreground text-lg font-bold">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">{copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
 
       <CTASection />

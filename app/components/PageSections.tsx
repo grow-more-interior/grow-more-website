@@ -11,11 +11,13 @@ export function PageHero({
   copy: string;
 }) {
   return (
-    <section className="bg-[#1a1614] text-white">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+    <section className="relative overflow-hidden bg-[#1a1614] text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(201,168,76,0.18),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.05),transparent_45%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/40 to-transparent" />
+      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#C9A84C]">{eyebrow}</p>
-        <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">{title}</h1>
-        <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">{copy}</p>
+        <h1 className="mt-5 max-w-4xl text-4xl font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">{title}</h1>
+        <p className="mt-6 max-w-3xl text-base leading-8 text-white/75 sm:text-lg">{copy}</p>
       </div>
     </section>
   );
@@ -101,9 +103,40 @@ export function Callout() {
 
 export function InfoCard({ title, copy }: { title: string; copy: string }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#C9A84C]/50 hover:shadow-xl">
       <h3 className="text-lg font-bold text-[#1a1614]">{title}</h3>
       <p className="mt-3 text-sm leading-7 text-gray-600">{copy}</p>
     </div>
+  );
+}
+
+export function FAQSection({
+  eyebrow = "Questions",
+  title = "Helpful answers before you begin",
+  items,
+}: {
+  eyebrow?: string;
+  title?: string;
+  items: Array<[string, string]>;
+}) {
+  return (
+    <section className="bg-[#f7f4ee] px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl">
+        <SectionHeader eyebrow={eyebrow} title={title} />
+        <div className="grid gap-4">
+          {items.map(([question, answer]) => (
+            <details key={question} className="group rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+              <summary className="cursor-pointer list-none text-base font-bold text-[#1a1614]">
+                <span className="inline-flex w-full items-center justify-between gap-4">
+                  {question}
+                  <span className="text-[#C9A84C] transition group-open:rotate-45">+</span>
+                </span>
+              </summary>
+              <p className="mt-4 text-sm leading-7 text-gray-600">{answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

@@ -138,6 +138,19 @@ export default function Gallery() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        <section className="mt-20 grid gap-5 md:grid-cols-3">
+          {[
+            ["Living Room Ideas", "Explore TV walls, conversational seating, statement lighting, coffee table styling, layered textures, and storage-friendly layouts."],
+            ["Kitchen & Wardrobe Ideas", "Find modular kitchen inspiration, appliance zones, pantry planning, handle profiles, shutters, counters, and custom wardrobe storage."],
+            ["Office & Commercial Ideas", "Review workspace, reception, meeting room, retail display, and hospitality design directions built around brand and visitor experience."],
+          ].map(([title, copy]) => (
+            <article key={title} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <h2 className="text-xl font-bold text-foreground">{title}</h2>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{copy}</p>
+            </article>
+          ))}
+        </section>
       </div>
 
       {/* Lightbox */}

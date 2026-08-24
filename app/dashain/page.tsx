@@ -5,6 +5,9 @@ import EnquiryForm from "../enquiry/EnquiryForm";
 export const metadata = {
   title: "Grow More Dashain Design Festival 2082 – Up to 25% Off + 0% EMI & Free Gifts",
   description: "Celebrate Dashain 2082 with Grow More's biggest festive interior design sale – discounts up to 25%, free custom sofa sets, easy 0% EMI financing, and layout exchange upgrades. Create your dream space with premium Nepalese craftsmanship and professional architecture.",
+  alternates: {
+    canonical: "/dashain",
+  },
 };
 
 const festiveOffers = [
@@ -67,12 +70,12 @@ export default function DashainOfferPage() {
                 >
                   Lock Festive Rates
                 </a>
-                <a
+                <Link
                   href="/projects"
                   className="px-6 py-3 border border-white/20 hover:border-white/50 text-white rounded-md text-xs font-bold uppercase tracking-widest transition-all duration-300 bg-white/5"
                 >
                   View Portfolios
-                </a>
+                </Link>
               </div>
             </div>
 

@@ -126,7 +126,8 @@ const VerticalCutReveal = forwardRef<VerticalCutRevealRef, TextProps>(
 
     useEffect(() => {
       if (autoStart) {
-        startAnimation()
+        const frame = requestAnimationFrame(() => startAnimation())
+        return () => cancelAnimationFrame(frame)
       }
     }, [autoStart, startAnimation])
 

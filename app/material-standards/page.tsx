@@ -1,4 +1,13 @@
-import { PageHero } from "../components/PageSections";
+import { FAQSection, PageHero } from "../components/PageSections";
+import { createMetadata } from "../seo";
+
+export const metadata = createMetadata({
+  title: "Interior Material Standards & Safety | Grow More Interior",
+  description:
+    "See material quality standards for Grow More Interior projects, including E1 boards, FR plywood, low VOC paint, acoustic panels, hardware durability, and upholstery testing.",
+  path: "/material-standards",
+  keywords: ["interior material standards Nepal", "E1 board interiors", "low VOC paint Nepal", "modular furniture quality"],
+});
 
 const rows = [
   ["Wood Formaldehyde Emission", "E1 Certified (Safe)", "EN 717-1"],
@@ -29,6 +38,15 @@ export default function MaterialStandardsPage() {
           ))}
         </div>
       </section>
+      <FAQSection
+        eyebrow="Material Care"
+        title="Why standards matter in interior projects"
+        items={[
+          ["Why use E1 certified boards?", "E1 boards help control formaldehyde emissions, improving indoor air quality for bedrooms, kitchens, wardrobes, and long-use living spaces."],
+          ["Why choose low VOC paints?", "Low VOC finishes reduce strong paint odor and support healthier indoor environments during and after renovation."],
+          ["How do soft-close hardware tests help?", "Cycle-tested hardware improves daily durability for modular kitchens, wardrobes, drawers, vanities, and high-use storage zones."],
+        ]}
+      />
     </main>
   );
 }

@@ -95,7 +95,7 @@ export default function AboutSection3() {
           >
             <div className="relative aspect-21/9 w-full overflow-hidden rounded-3xl border border-border/40 bg-muted">
               <Image
-                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&auto=format&fit=crop&q=75"
+                src="/hero_living_room.png"
                 alt="Grow More Interior Studio"
                 fill
                 priority

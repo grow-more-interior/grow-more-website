@@ -22,8 +22,7 @@ const posts = [
     date: "May 15, 2026",
     readTime: "8 min read",
     category: "Trends",
-    image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=75&w=1200",
+    image: "/hero-bg.png",
   },
   {
     id: 2,
@@ -33,8 +32,7 @@ const posts = [
     date: "Apr 28, 2026",
     readTime: "6 min read",
     category: "Design Tips",
-    image:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=75&w=1200",
+    image: "/bg/Olivion Interior Hero Background.png",
   },
   {
     id: 3,
@@ -44,8 +42,7 @@ const posts = [
     date: "Apr 10, 2026",
     readTime: "5 min read",
     category: "Minimalism",
-    image:
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=75&w=1200",
+    image: "/reference/reference-vintage-studio.jpg",
   },
   {
     id: 4,
@@ -55,8 +52,7 @@ const posts = [
     date: "Mar 25, 2026",
     readTime: "7 min read",
     category: "Materials",
-    image:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=75&w=1200",
+    image: "/bg/Pricing Card Background.png",
   },
   {
     id: 5,
@@ -66,8 +62,7 @@ const posts = [
     date: "Mar 12, 2026",
     readTime: "5 min read",
     category: "Space Planning",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=75&w=1200",
+    image: "/hero_living_room.png",
   },
   {
     id: 6,
@@ -77,8 +72,7 @@ const posts = [
     date: "Feb 28, 2026",
     readTime: "6 min read",
     category: "Wellness Design",
-    image:
-      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=75&w=1200",
+    image: "/Olivion Interior Background.png",
   },
 ];
 

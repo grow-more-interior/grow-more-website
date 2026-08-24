@@ -400,7 +400,7 @@ export default function Navbar() {
                             className="flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors"
                           >
                             <img
-                              src={product.image?.url || "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=80&h=80&q=80"}
+                              src={product.image?.url || "/hero_living_room.png"}
                               alt={product.name}
                               className="w-12 h-12 object-cover rounded border border-gray-100 flex-shrink-0"
                             />
@@ -546,7 +546,7 @@ export default function Navbar() {
                           className="flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors"
                         >
                           <img
-                            src={product.image?.url || "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=80&h=80&q=80"}
+                            src={product.image?.url || "/hero_living_room.png"}
                             alt={product.name}
                             className="w-10 h-10 object-cover rounded border border-gray-100 flex-shrink-0"
                           />

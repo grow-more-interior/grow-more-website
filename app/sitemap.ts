@@ -39,7 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.78,
-    images: [collection.image],
   }));
 
   const blogPages = blogRoutes.map((slug) => ({

@@ -10,47 +10,47 @@ const categories = ["All", "Living Room", "Bedroom", "Kitchen", "Bathroom", "Off
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=75&w=1200",
+    src: "/hero-bg.png",
     category: "Living Room",
     title: "Modern Living Space",
   },
   {
-    src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=75&w=1200",
+    src: "/hero_living_room.png",
     category: "Bedroom",
     title: "Serene Master Suite",
   },
   {
-    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=75&w=1200",
+    src: "/Olivion Interior Background.png",
     category: "Living Room",
     title: "Penthouse Living",
   },
   {
-    src: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=75&w=1200",
+    src: "/bg/Olivion Interior Team Background.png",
     category: "Office",
     title: "Executive Workspace",
   },
   {
-    src: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=75&w=1200",
+    src: "/bg/Olivion Interior Hero Background.png",
     category: "Kitchen",
     title: "Chef's Kitchen",
   },
   {
-    src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=75&w=1200",
+    src: "/reference/reference-vintage-studio.jpg",
     category: "Bedroom",
     title: "Zen Retreat",
   },
   {
-    src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=75&w=1200",
+    src: "/bg/Olivion Interior Background.jpg",
     category: "Bathroom",
     title: "Spa Sanctuary",
   },
   {
-    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=75&w=1200",
+    src: "/bg/Pricing Card Background.png",
     category: "Kitchen",
     title: "Minimalist Kitchen",
   },
   {
-    src: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&q=75&w=1200",
+    src: "/reference/reference-studio-desk.jpg",
     category: "Living Room",
     title: "Opulence Suite",
   },

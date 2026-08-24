@@ -14,8 +14,7 @@ const allProjects = [
     category: "Residential",
     location: "New York, NY",
     year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=75&w=1200",
+    image: "/hero_living_room.png",
   },
   {
     id: 2,
@@ -23,8 +22,7 @@ const allProjects = [
     category: "Commercial",
     location: "Chicago, IL",
     year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=75&w=1200",
+    image: "/bg/Olivion Interior Team Background.png",
   },
   {
     id: 3,
@@ -32,8 +30,7 @@ const allProjects = [
     category: "Luxury",
     location: "Milan, Italy",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=75&w=1200",
+    image: "/hero-bg.png",
   },
   {
     id: 4,
@@ -41,8 +38,7 @@ const allProjects = [
     category: "Residential",
     location: "Kyoto, Japan",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=75&w=1200",
+    image: "/bg/Olivion Interior Hero Background.png",
   },
   {
     id: 5,
@@ -50,8 +46,7 @@ const allProjects = [
     category: "Commercial",
     location: "Paris, France",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1574359411659-15573a27fd0c?auto=format&fit=crop&q=75&w=1200",
+    image: "/Olivion Interior Background.png",
   },
   {
     id: 6,
@@ -59,8 +54,7 @@ const allProjects = [
     category: "Luxury",
     location: "London, UK",
     year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&q=75&w=1200",
+    image: "/reference/reference-vintage-studio.jpg",
   },
 ];
 

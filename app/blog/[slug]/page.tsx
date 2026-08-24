@@ -11,7 +11,7 @@ function getPost(slug: string) {
     content: "When it comes to luxury interior design, the word 'trend' can sometimes feel antithetical to the goal of creating a timeless space. However, the best design trends are those that evolve organically from a desire for comfort, sustainability, and personal expression. This year, we are seeing a shift towards spaces that feel grounded, tactile, and inherently calming. We explore ten trends that are here to stay.",
     date: "May 15, 2026",
     author: "Grow More Design Studio",
-    heroImage: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2560",
+    heroImage: "/hero-bg.png",
   };
 }
 

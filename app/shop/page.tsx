@@ -22,7 +22,7 @@ const products = [
     rating: 4.9,
     reviews: 32,
     tag: "Bestseller",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=75&w=800",
+    image: "/hero_living_room.png",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const products = [
     rating: 4.8,
     reviews: 18,
     tag: "New Arrival",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=75&w=800",
+    image: "/bg/Pricing Card Background.png",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const products = [
     rating: 5.0,
     reviews: 12,
     tag: "Limited Edition",
-    image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&q=75&w=800",
+    image: "/reference/reference-vintage-studio.jpg",
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const products = [
     rating: 4.7,
     reviews: 45,
     tag: "Popular",
-    image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=75&w=800",
+    image: "/Olivion Interior Background.png",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ const products = [
     rating: 4.9,
     reviews: 67,
     tag: "Bestseller",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=75&w=800",
+    image: "/hero-bg.png",
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ const products = [
     rating: 4.8,
     reviews: 29,
     tag: "New Arrival",
-    image: "https://images.unsplash.com/photo-1616627547584-bf28cee262db?auto=format&fit=crop&q=75&w=800",
+    image: "/reference/reference-studio-desk.jpg",
   },
 ];
 

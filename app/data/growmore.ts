@@ -6,7 +6,7 @@ export const collections = [
     tag: "Clean lines, functional layouts, and warm neutral palettes for contemporary homes.",
     size: "Living, Dining & Bedroom",
     finish: "Warm oak wood & premium lacquer",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "/hero_living_room.png",
   },
   {
     slug: "neo-classical",
@@ -15,7 +15,7 @@ export const collections = [
     tag: "Timeless elegance with classical moldings, luxury fabrics, and symmetrical arrangements.",
     size: "Full Duplex or Villa",
     finish: "Italian marble & gold metal accents",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "/hero-bg.png",
   },
   {
     slug: "corporate-excellence",
@@ -24,7 +24,7 @@ export const collections = [
     tag: "Ergonomic spaces designed to boost productivity, collaboration, and brand identity.",
     size: "Office Fit-out",
     finish: "Acoustic panels & sleek matte steel",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "/bg/Olivion Interior Team Background.png",
   },
   {
     slug: "retail-luxe",
@@ -33,7 +33,7 @@ export const collections = [
     tag: "Immersive boutique layouts designed for customer flow, premium display, and style.",
     size: "Retail Showroom",
     finish: "Bespoke glass & velvet upholstery",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "/Olivion Interior Background.png",
   },
   {
     slug: "scandinavian-cozy",
@@ -42,7 +42,7 @@ export const collections = [
     tag: "Bright, airy spaces featuring natural wood grains, soft textiles, and organic shapes.",
     size: "Apartment Fit-out",
     finish: "Light ash wood & linen textiles",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "/bg/Olivion Interior Hero Background.png",
   },
   {
     slug: "industrial-loft",
@@ -51,7 +51,7 @@ export const collections = [
     tag: "Raw brick walls, exposed metal elements, and rustic wood accents with high ceilings.",
     size: "Cafe & Restaurant",
     finish: "Raw concrete & distressed leather",
-    image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "/reference/reference-studio-desk.jpg",
   },
   {
     slug: "art-deco",
@@ -60,7 +60,7 @@ export const collections = [
     tag: "Bold geometric patterns, high-gloss finishes, and rich metallic detailing.",
     size: "Penthouses & Suites",
     finish: "Ebony wood & polished brass",
-    image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "/bg/Olivion Interior Background.jpg",
   },
   {
     slug: "japandi-fusion",
@@ -69,7 +69,7 @@ export const collections = [
     tag: "The perfect blend of Japanese simplicity and Scandinavian rustic warmth.",
     size: "Wellness Studios & Homes",
     finish: "Bamboo grids & off-white plaster",
-    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "/reference/reference-vintage-studio.jpg",
   },
 ];
 

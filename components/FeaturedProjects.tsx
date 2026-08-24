@@ -12,8 +12,7 @@ const projects = [
     title: "Penthouse Horizon",
     category: "Residential",
     location: "New York, NY",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=75&w=1200",
+    image: "/hero_living_room.png",
     span: "lg:col-span-2 lg:row-span-2",
     aspect: "aspect-[4/3]",
   },
@@ -22,8 +21,7 @@ const projects = [
     title: "The Noir Club",
     category: "Commercial",
     location: "Chicago, IL",
-    image:
-      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=75&w=800",
+    image: "/bg/Olivion Interior Team Background.png",
     span: "lg:col-span-1",
     aspect: "aspect-[4/3]",
   },
@@ -32,8 +30,7 @@ const projects = [
     title: "Villa Aurelia",
     category: "Luxury",
     location: "Milan, Italy",
-    image:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=75&w=800",
+    image: "/hero-bg.png",
     span: "lg:col-span-1",
     aspect: "aspect-[4/3]",
   },
@@ -42,8 +39,7 @@ const projects = [
     title: "Celestial Office",
     category: "Commercial",
     location: "San Francisco, CA",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=75&w=1200",
+    image: "/reference/reference-studio-desk.jpg",
     span: "lg:col-span-3",
     aspect: "aspect-[21/7]",
   },

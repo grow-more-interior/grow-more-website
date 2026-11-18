@@ -10,27 +10,27 @@ const categories = ["All", "Living Room", "Bedroom", "Kitchen", "Bathroom", "Off
 
 const galleryImages = [
   {
-    src: "/hero-bg.png",
+    src: "/hero-bg.webp",
     category: "Living Room",
     title: "Modern Living Space",
   },
   {
-    src: "/hero_living_room.png",
+    src: "/hero_living_room.webp",
     category: "Bedroom",
     title: "Serene Master Suite",
   },
   {
-    src: "/Olivion Interior Background.png",
+    src: "/Grow More Interior Background.webp",
     category: "Living Room",
     title: "Penthouse Living",
   },
   {
-    src: "/bg/Olivion Interior Team Background.png",
+    src: "/bg/Grow More Interior Team Background.webp",
     category: "Office",
     title: "Executive Workspace",
   },
   {
-    src: "/bg/Olivion Interior Hero Background.png",
+    src: "/bg/Grow More Interior Hero Background.webp",
     category: "Kitchen",
     title: "Chef's Kitchen",
   },
@@ -40,7 +40,7 @@ const galleryImages = [
     title: "Zen Retreat",
   },
   {
-    src: "/bg/Olivion Interior Background.jpg",
+    src: "/bg/Grow More Interior Background.webp",
     category: "Bathroom",
     title: "Spa Sanctuary",
   },

@@ -6,7 +6,7 @@ export const collections = [
     tag: "Clean lines, functional layouts, and warm neutral palettes for contemporary homes.",
     size: "Living, Dining & Bedroom",
     finish: "Warm oak wood & premium lacquer",
-    image: "/hero_living_room.png",
+    image: "/hero_living_room.webp",
   },
   {
     slug: "neo-classical",
@@ -15,7 +15,7 @@ export const collections = [
     tag: "Timeless elegance with classical moldings, luxury fabrics, and symmetrical arrangements.",
     size: "Full Duplex or Villa",
     finish: "Italian marble & gold metal accents",
-    image: "/hero-bg.png",
+    image: "/hero-bg.webp",
   },
   {
     slug: "corporate-excellence",
@@ -24,7 +24,7 @@ export const collections = [
     tag: "Ergonomic spaces designed to boost productivity, collaboration, and brand identity.",
     size: "Office Fit-out",
     finish: "Acoustic panels & sleek matte steel",
-    image: "/bg/Olivion Interior Team Background.png",
+    image: "/bg/Grow More Interior Team Background.webp",
   },
   {
     slug: "retail-luxe",
@@ -33,7 +33,7 @@ export const collections = [
     tag: "Immersive boutique layouts designed for customer flow, premium display, and style.",
     size: "Retail Showroom",
     finish: "Bespoke glass & velvet upholstery",
-    image: "/Olivion Interior Background.png",
+    image: "/Grow More Interior Background.webp",
   },
   {
     slug: "scandinavian-cozy",
@@ -42,7 +42,7 @@ export const collections = [
     tag: "Bright, airy spaces featuring natural wood grains, soft textiles, and organic shapes.",
     size: "Apartment Fit-out",
     finish: "Light ash wood & linen textiles",
-    image: "/bg/Olivion Interior Hero Background.png",
+    image: "/bg/Grow More Interior Hero Background.webp",
   },
   {
     slug: "industrial-loft",
@@ -60,7 +60,7 @@ export const collections = [
     tag: "Bold geometric patterns, high-gloss finishes, and rich metallic detailing.",
     size: "Penthouses & Suites",
     finish: "Ebony wood & polished brass",
-    image: "/bg/Olivion Interior Background.jpg",
+    image: "/bg/Grow More Interior Background.webp",
   },
   {
     slug: "japandi-fusion",
@@ -88,9 +88,8 @@ export const spaces = [
 
 export const stats = [
   ["250+", "Turnkey Projects"],
-  ["12+", "Years of Design"],
-  ["15+", "National Awards"],
-  ["50+", "In-House Experts"],
+  ["2012", "Established"],
+    ["50+", "In-House Experts"],
   ["100%", "Client Satisfaction"],
 ];
 
@@ -107,7 +106,7 @@ export const dealers = [
   ["Kathmandu Design Studio", "Uttar Dhoka, Kathmandu", "+977-9802364638", "10:00 AM-7:00 PM"],
   ["Corporate Office", "Lal Durbar One, Durbar Marg, Kathmandu", "+977-9802364638", "10:00 AM-6:00 PM"],
   ["Bespoke Furniture Studio", "Gulariya Nagarpalika-8, Bardiya", "+977-9802364639", "10:00 AM-6:00 PM"],
-  ["Pokhara Design Studio", "Tillotama, Rupandehi", "", "9:00 AM-5:00 PM"],
+  ["Rupandehi Design Studio", "Tillotama, Rupandehi", "", "9:00 AM-5:00 PM"],
   ["Lalitpur Design Studio", "Mahalaxmisthan, Lalitpur", "", "9:00 AM-5:00 PM"],
 ];
 
@@ -115,7 +114,5 @@ export const newsItems = [
   ["Grow More Design in the Luxury Market", "Press", "Grow More brings world-class, European-inspired interior design services to Nepal."],
   ["Flagship Design Studio Inauguration", "Event", "We open our state-of-the-art Experience Studio showcasing turnkey living concepts."],
   ["AD Turnkey Duplex Project Feature", "Press", "Our recent classical-contemporary duplex in Lalitpur gets featured in AD India."],
-  ["Best Luxury Designer Award", "Milestone", "Grow More Interior receives the Excellence in Design award at the Buildcon summit."],
   ["Expansion of Bespoke Furniture Line", "Launch", "We launch our exclusive in-house line of custom walnut and leather furniture."],
-  ["ISO 9001:2015 Quality Certification", "Milestone", "Our project execution and project management workflow achieves ISO standards certification."],
 ];

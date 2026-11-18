@@ -16,10 +16,12 @@ const staticRoutes = [
   ["dealers", 0.8, "monthly"],
   ["news", 0.65, "weekly"],
   ["careers", 0.55, "monthly"],
-  ["dashain", 0.85, "weekly"],
   ["contact", 0.9, "monthly"],
   ["enquiry", 0.9, "monthly"],
-  ["privacy-policy", 0.25, "yearly"],
+  ["terms", 0.25, "yearly"],
+  ["services/modular-kitchen", 0.8, "monthly"],
+  ["services/home-interior", 0.8, "monthly"],
+  ["services/office-fit-out", 0.8, "monthly"],
 ] as const;
 
 const blogRoutes = ["1", "2", "3", "4", "5", "6"] as const;

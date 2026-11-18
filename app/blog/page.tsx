@@ -22,7 +22,7 @@ const posts = [
     date: "May 15, 2026",
     readTime: "8 min read",
     category: "Trends",
-    image: "/hero-bg.png",
+    image: "/hero-bg.webp",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const posts = [
     date: "Apr 28, 2026",
     readTime: "6 min read",
     category: "Design Tips",
-    image: "/bg/Olivion Interior Hero Background.png",
+    image: "/bg/Grow More Interior Hero Background.webp",
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ const posts = [
     date: "Mar 12, 2026",
     readTime: "5 min read",
     category: "Space Planning",
-    image: "/hero_living_room.png",
+    image: "/hero_living_room.webp",
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ const posts = [
     date: "Feb 28, 2026",
     readTime: "6 min read",
     category: "Wellness Design",
-    image: "/Olivion Interior Background.png",
+    image: "/Grow More Interior Background.webp",
   },
 ];
 

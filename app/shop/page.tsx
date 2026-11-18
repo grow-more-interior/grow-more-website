@@ -22,7 +22,7 @@ const products = [
     rating: 4.9,
     reviews: 32,
     tag: "Bestseller",
-    image: "/hero_living_room.png",
+    image: "/hero_living_room.webp",
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const products = [
     rating: 4.7,
     reviews: 45,
     tag: "Popular",
-    image: "/Olivion Interior Background.png",
+    image: "/Grow More Interior Background.webp",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ const products = [
     rating: 4.9,
     reviews: 67,
     tag: "Bestseller",
-    image: "/hero-bg.png",
+    image: "/hero-bg.webp",
   },
   {
     id: 6,

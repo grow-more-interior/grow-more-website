@@ -13,11 +13,11 @@ function getProject(id: string) {
     location: "New York, NY",
     year: "2025",
     description: "A breathtaking full-floor penthouse renovation emphasizing panoramic city views while maintaining an intimate, opulent atmosphere. The project features custom millwork, integrated smart home technology, and bespoke furniture pieces tailored to the client's lifestyle.",
-    heroImage: "/hero_living_room.png",
+    heroImage: "/hero_living_room.webp",
     gallery: [
-      "/hero-bg.png",
-      "/bg/Olivion Interior Hero Background.png",
-      "/Olivion Interior Background.png"
+      "/hero-bg.webp",
+      "/bg/Grow More Interior Hero Background.webp",
+      "/Grow More Interior Background.webp"
     ]
   };
 }

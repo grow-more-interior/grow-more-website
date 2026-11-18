@@ -11,7 +11,7 @@ export default function CTASection() {
       <div className="relative w-full max-w-7xl h-[500px] md:h-[580px] overflow-hidden shadow-2xl group">
         {/* Background Image */}
         <Image
-          src="/bg/Olivion Interior Newsletter Background.png"
+          src="/bg/Grow More Interior Newsletter Background.webp"
           alt="Premium Interior"
           fill
           className="object-cover transition-transform duration-1000 group-hover:scale-105"

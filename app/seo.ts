@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "Grow More Interior",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://growmoreinterior.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.growmoreinterior.com",
   phone: "+9779802364638",
   email: "info@growmoreinterior.com",
   address: "Uttar Dhoka, Kathmandu, Nepal",
@@ -26,7 +26,7 @@ export function createMetadata({
   description,
   path = "/",
   keywords = [],
-  image = "/hero-bg.png",
+  image = "/hero-bg.webp",
   noIndex = false,
 }: SeoPage): Metadata {
   const canonical = new URL(path, siteConfig.url).toString();
@@ -100,7 +100,7 @@ export const organizationJsonLd = {
   name: siteConfig.name,
   url: siteConfig.url,
   logo: `${siteConfig.url}/gm-logo.png`,
-  image: `${siteConfig.url}/hero-bg.png`,
+  image: `${siteConfig.url}/hero-bg.webp`,
   description: siteConfig.description,
   telephone: siteConfig.phone,
   email: siteConfig.email,

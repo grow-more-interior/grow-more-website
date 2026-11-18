@@ -8,9 +8,10 @@ export default function Hero() {
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-bg.png"
+          src="/hero-bg.webp"
           alt="Luxury interior design company project in Kathmandu Nepal"
           fill
+          sizes="100vw"
           priority
           className="object-cover object-center"
         />

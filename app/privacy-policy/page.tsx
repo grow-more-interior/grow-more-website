@@ -1,25 +1,14 @@
 import { PageHero } from "../components/PageSections";
 import { createMetadata } from "../seo";
-
-export const metadata = createMetadata({
-  title: "Privacy Policy | Grow More Interior",
-  description:
-    "Read how Grow More Interior handles enquiry details, contact information, career applications, and project consultation data.",
-  path: "/privacy-policy",
-  noIndex: true,
-});
-
+export const metadata = createMetadata({ title: "Privacy Policy | Grow More Interior", description: "How we handle enquiries, cookies, analytics and advertising data.", path: "/privacy-policy", noIndex: true });
 export default function PrivacyPolicyPage() {
-  return (
-    <main className="bg-[#f7f4ee]">
-      <PageHero eyebrow="Privacy Policy" title="Your information is handled with care." copy="This page provides a simple privacy overview for enquiry and contact interactions on the Grow More website." />
-      <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="space-y-6 rounded-lg border border-gray-200 bg-white p-6 text-sm leading-7 text-gray-600 shadow-sm sm:p-8">
-          <p>Grow More may collect contact details you submit through enquiry, contact, or career forms so our team can respond to your request.</p>
-          <p>Information is used for communication, design assistance, project coordination, and service improvement. It is not sold to third parties.</p>
-          <p>For privacy questions, contact <a className="font-bold text-[#C9A84C]" href="mailto:info@growmoreinterior.com">info@growmoreinterior.com</a>.</p>
-        </div>
-      </section>
-    </main>
-  );
+  const sections = [
+    ["Information you provide", "When you submit an enquiry, we collect your name, phone number, email address, space type and message. Please avoid including sensitive information. We use these details to respond, prepare proposals and coordinate projects."],
+    ["Service providers and security", "Enquiries are sent to our configured lead delivery provider for our team to receive and manage. Hosting and delivery providers process data on our behalf and may process it outside Nepal. We use access controls and encrypted connections. We do not sell enquiry details. A hashed identifier derived from your IP address and email is used briefly to limit spam."],
+    ["Cookies, Google Analytics and Google Ads", "We use local storage to remember your cookie choice. Google Tag Manager manages measurement tags. Google Analytics 4 can measure visits and interactions; Google Ads can measure conversions, match advertising interactions and support remarketing. Optional analytics and advertising storage, ad personalization and advertising user data are denied by default. Accepting optional cookies enables these uses where the relevant tags have been configured. Google may receive technical information such as page visits, device information and IP address, and may process data abroad. With denied consent, Google tags may still send cookieless measurement signals."],
+    ["Your choices", "Use Cookie settings at the bottom of any page to accept or reject optional analytics and advertising cookies. Rejecting them does not prevent you from submitting an enquiry. You can also manage cookies in your browser. We do not place your enquiry message or raw contact details in analytics events."],
+    ["Retention", "We keep enquiry details while responding to your request and for any resulting project, then only as needed for business records or applicable legal obligations. Provider backups and Google measurement data follow their configured retention periods. Contact us for the retention period that applies to your records or to request deletion."],
+    ["Access, correction and deletion", "To request access, correction or deletion of your details, withdraw permission, or ask a privacy question, email info@growmoreinterior.com. Please provide enough information for us to locate your enquiry. We may need to verify your identity and retain records required by law."],
+  ];
+  return <><PageHero eyebrow="Privacy Policy" title="How we handle your information." copy="Last updated: 18 November 2026. This policy covers the Grow More Interior website and enquiry forms." /><section className="mx-auto max-w-3xl px-6 py-16 space-y-8">{sections.map(([title, text]) => <section key={title}><h2 className="text-xl font-semibold mb-3">{title}</h2><p className="leading-7">{text}</p></section>)}<p>Grow More Interior, Uttar Dhoka, Kathmandu, Nepal. <a href="mailto:info@growmoreinterior.com" className="underline">Contact us about privacy</a>. See <a href="https://policies.google.com/privacy" className="underline">Google’s privacy policy</a> for its data practices.</p></section></>;
 }

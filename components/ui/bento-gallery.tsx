@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 import React, { useRef, useState, useEffect } from "react"
 import {
   motion,
@@ -65,7 +67,8 @@ const ImageModal = ({
         className="relative w-full max-w-5xl p-4 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
+        <Image
+          width={1200} height={900} sizes="(max-width: 1024px) 100vw, 1024px"
           src={item.url}
           alt={item.title}
           className="h-auto max-h-[85vh] w-full rounded-2xl object-contain shadow-2xl"
@@ -164,7 +167,8 @@ const InteractiveImageBentoGallery: React.FC<
                 tabIndex={0}
                 aria-label={`View ${item.title}`}
               >
-                <img
+                <Image
+                  fill sizes="(max-width: 768px) 100vw, 50vw"
                   src={item.url}
                   alt={item.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"

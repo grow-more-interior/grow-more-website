@@ -95,7 +95,7 @@ export default function AboutSection3() {
           >
             <div className="relative aspect-21/9 w-full overflow-hidden rounded-3xl border border-border/40 bg-muted">
               <Image
-                src="/hero_living_room.png"
+                sizes="(max-width: 768px) 100vw, 60vw" src="/hero_living_room.webp"
                 alt="Grow More Interior Studio"
                 fill
                 priority
@@ -115,8 +115,8 @@ export default function AboutSection3() {
               className="flex gap-10"
             >
               <div className="flex items-center gap-3">
-                <span className="text-primary font-serif text-3xl font-normal">12+</span>
-                <span className="text-muted-foreground font-light tracking-widest text-[10px] sm:text-xs">Years of Excellence</span>
+                <span className="text-primary font-serif text-3xl font-normal">2012</span>
+                <span className="text-muted-foreground font-light tracking-widest text-[10px] sm:text-xs">Established</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-primary font-serif text-3xl font-normal">250+</span>
@@ -135,16 +135,6 @@ export default function AboutSection3() {
                 <span className="text-primary font-serif text-3xl font-normal">100%</span>
                 <span className="text-muted-foreground font-light tracking-widest text-[10px] sm:text-xs">Vision Clarity</span>
               </TimelineContent>
-              <TimelineContent
-                as="div"
-                animationNum={7}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                className="flex items-center gap-3"
-              >
-                <span className="text-primary font-serif text-3xl font-normal">15+</span>
-                <span className="text-muted-foreground font-light tracking-widest text-[10px] sm:text-xs">Global Awards</span>
-              </TimelineContent>
             </div>
           </div>
         </div>
@@ -152,7 +142,7 @@ export default function AboutSection3() {
         {/* Main Content */}
         <div className="grid md:grid-cols-3 gap-16 px-6">
           <div className="md:col-span-2">
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl lg:leading-[1.1] text-foreground mb-10 font-normal">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl lg:leading-[1.1] text-foreground mb-10 font-normal">
               <VerticalCutReveal
                 splitBy="words"
                 staggerDuration={0.1}
@@ -167,7 +157,7 @@ export default function AboutSection3() {
               >
                 Crafting Spaces That Echo Your Unique Identity.
               </VerticalCutReveal>
-            </h1>
+            </h2>
 
             <TimelineContent
               as="div"

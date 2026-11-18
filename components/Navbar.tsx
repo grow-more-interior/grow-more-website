@@ -214,17 +214,6 @@ export default function Navbar() {
                 Home
               </Link>
               <Link
-                href="/dashain"
-                className={`whitespace-nowrap text-[13px] xl:text-[15px] font-bold tracking-wide transition-all duration-200 relative py-2 flex items-center gap-1.5 ${isActive("/dashain") ? "text-red-600" : "text-red-500 hover:text-red-600"
-                  }`}
-              >
-                Dashain Offer
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                </span>
-              </Link>
-              <Link
                 href="/about"
                 className={`whitespace-nowrap text-[13px] xl:text-[15px] font-semibold tracking-wide transition-all duration-200 relative py-2 ${isActive("/about") ? "text-[#C9A84C]" : "text-gray-800 hover:text-[#C9A84C]"
                   }`}
@@ -400,7 +389,7 @@ export default function Navbar() {
                             className="flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors"
                           >
                             <img
-                              src={product.image?.url || "/hero_living_room.png"}
+                              src={product.image?.url || "/hero_living_room.webp"}
                               alt={product.name}
                               className="w-12 h-12 object-cover rounded border border-gray-100 flex-shrink-0"
                             />
@@ -546,7 +535,7 @@ export default function Navbar() {
                           className="flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors"
                         >
                           <img
-                            src={product.image?.url || "/hero_living_room.png"}
+                            src={product.image?.url || "/hero_living_room.webp"}
                             alt={product.name}
                             className="w-10 h-10 object-cover rounded border border-gray-100 flex-shrink-0"
                           />
@@ -575,18 +564,6 @@ export default function Navbar() {
                   }`}
               >
                 Home
-              </Link>
-              <Link
-                href="/dashain"
-                onClick={closeDrawer}
-                className={`text-base font-bold transition-colors flex items-center gap-1.5 ${isActive("/dashain") ? "text-red-600" : "text-red-500 hover:text-red-600"
-                  }`}
-              >
-                Dashain Offer
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                </span>
               </Link>
               <Link
                 href="/about"

@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactFAB from "@/components/ContactFAB";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Tracking from "@/components/Tracking";
 import ScrollRevealInit from "@/components/ScrollRevealInit";
 import { createMetadata, organizationJsonLd, siteConfig, websiteJsonLd } from "./seo";
 
@@ -46,6 +47,7 @@ export const metadata: Metadata = {
       "bespoke furniture Kathmandu",
     ],
   }),
+  alternates: { canonical: null },
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
@@ -83,33 +85,30 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${plusJakartaSans.className} flex flex-col min-h-full bg-[var(--color-background)] text-[var(--color-foreground)] transition-colors duration-500`}
       >
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-ETR1TXZHTG"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-ETR1TXZHTG');
-          `}
-        </Script>
-
-        {/* Google Tag Manager (GTM-5NQWM67T) */}
-        <Script
-          src="https://www.googletagmanager.com/gtm.js?id=GTM-5NQWM67T"
-          strategy="afterInteractive"
-        />
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          `}
-        </Script>
+        <Script id="consent-defaults" strategy="beforeInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){ window.dataLayer.push(arguments); };
+          gtag('consent', 'default', {
+            analytics_storage: 'denied', ad_storage: 'denied',
+            ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500
+          });
+          gtag('set', 'ads_data_redaction', true);
+          try {
+            var choice = localStorage.getItem('tracking-consent-v1');
+            if (choice === 'granted') gtag('consent', 'update', {
+              analytics_storage: 'granted', ad_storage: 'granted',
+              ad_user_data: 'granted', ad_personalization: 'granted'
+            });
+          } catch(e) {}
+        `}</Script>
+        <Script id="google-tag-manager" strategy="afterInteractive">{`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-5NQWM67T');
+        `}</Script>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NQWM67T" height="0" width="0" style={{ display: "none", visibility: "hidden" }} title="Google Tag Manager" /></noscript>
 
         <ThemeProvider
           attribute="class"
@@ -122,6 +121,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <Footer />
           <ContactFAB />
+          <Tracking />
           <ScrollRevealInit />
         </ThemeProvider>
       </body>

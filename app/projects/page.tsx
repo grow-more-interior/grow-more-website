@@ -14,7 +14,7 @@ const allProjects = [
     category: "Residential",
     location: "New York, NY",
     year: "2025",
-    image: "/hero_living_room.png",
+    image: "/hero_living_room.webp",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const allProjects = [
     category: "Commercial",
     location: "Chicago, IL",
     year: "2025",
-    image: "/bg/Olivion Interior Team Background.png",
+    image: "/bg/Grow More Interior Team Background.webp",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const allProjects = [
     category: "Luxury",
     location: "Milan, Italy",
     year: "2024",
-    image: "/hero-bg.png",
+    image: "/hero-bg.webp",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const allProjects = [
     category: "Residential",
     location: "Kyoto, Japan",
     year: "2024",
-    image: "/bg/Olivion Interior Hero Background.png",
+    image: "/bg/Grow More Interior Hero Background.webp",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const allProjects = [
     category: "Commercial",
     location: "Paris, France",
     year: "2024",
-    image: "/Olivion Interior Background.png",
+    image: "/Grow More Interior Background.webp",
   },
   {
     id: 6,

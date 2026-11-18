@@ -18,36 +18,36 @@ const projects = [
     id: "laura",
     category: "living-room",
     name: "Laura's Living Room",
-    before: "/bg/Olivion Interior Background.jpg",
-    after: "/hero_living_room.png",
+    before: "/bg/Grow More Interior Background.webp",
+    after: "/hero_living_room.webp",
   },
   {
     id: "heather",
     category: "living-room",
     name: "Heather's Living Room",
     before: "/reference/reference-studio-desk.jpg",
-    after: "/bg/Olivion Interior Hero Background.png",
+    after: "/bg/Grow More Interior Hero Background.webp",
   },
   {
     id: "virginia",
     category: "living-room",
     name: "Virginia's Living Room",
     before: "/bg/Pricing Card Background.png",
-    after: "/Olivion Interior Background.png",
+    after: "/Grow More Interior Background.webp",
   },
   {
     id: "veronica",
     category: "living-room",
     name: "Veronica's Living Room",
-    before: "/bg/Olivion Interior Background.jpg",
-    after: "/hero-bg.png",
+    before: "/bg/Grow More Interior Background.webp",
+    after: "/hero-bg.webp",
   },
   {
     id: "cecily",
     category: "living-room",
     name: "Cecily's Living Room",
     before: "/reference/reference-vintage-studio.jpg",
-    after: "/bg/Olivion Interior Team Background.png",
+    after: "/bg/Grow More Interior Team Background.webp",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Feature() {
   const filteredProjects = projects.filter((p) => p.category === activeCategory);
 
   const handleMove = (e: React.MouseEvent | React.TouchEvent | React.PointerEvent) => {
-    if (!isDragging && e.type !== 'mousemove' && e.type !== 'touchmove' && e.type !== 'pointermove') return;
+    if (!isDragging) return;
 
     const target = e.currentTarget as HTMLElement;
     const rect = target.getBoundingClientRect();
@@ -140,7 +140,7 @@ export default function Feature() {
               alt="Before"
               fill
               className="object-cover"
-              priority
+              sizes="(max-width: 1280px) 100vw, 1280px"
             />
           </div>
 
@@ -154,7 +154,7 @@ export default function Feature() {
               alt="After"
               fill
               className="object-cover"
-              priority
+              sizes="(max-width: 1280px) 100vw, 1280px"
             />
           </div>
 

@@ -69,6 +69,7 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${fraunces.variable} ${carena.variable} ${whyteInktrap.variable} h-full antialiased`}
     >
       <head>
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

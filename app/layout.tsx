@@ -97,6 +97,19 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Google Tag Manager (GTM-5NQWM67T) */}
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-5NQWM67T"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          `}
+        </Script>
+
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

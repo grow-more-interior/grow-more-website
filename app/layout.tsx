@@ -93,13 +93,7 @@ export default function RootLayout({
             ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500
           });
           gtag('set', 'ads_data_redaction', true);
-          try {
-            var choice = localStorage.getItem('tracking-consent-v1');
-            if (choice === 'granted') gtag('consent', 'update', {
-              analytics_storage: 'granted', ad_storage: 'granted',
-              ad_user_data: 'granted', ad_personalization: 'granted'
-            });
-          } catch(e) {}
+          try { localStorage.removeItem('tracking-consent-v1'); } catch(e) {}
         `}</Script>
         <Script id="google-tag-manager" strategy="afterInteractive">{`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

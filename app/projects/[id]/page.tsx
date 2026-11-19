@@ -3,22 +3,18 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { createMetadata } from "@/app/seo";
 
-// Simulated fetch based on ID
+import { notFound } from "next/navigation";
+import { projects } from "@/lib/projects";
+
 function getProject(id: string) {
+  const project = projects.find((item) => String(item.id) === id);
+  if (!project) notFound();
   return {
-    id,
-    title: "Penthouse Horizon",
-    category: "Residential",
-    client: "The Richards Family",
-    location: "New York, NY",
-    year: "2025",
-    description: "A breathtaking full-floor penthouse renovation emphasizing panoramic city views while maintaining an intimate, opulent atmosphere. The project features custom millwork, integrated smart home technology, and bespoke furniture pieces tailored to the client's lifestyle.",
-    heroImage: "/hero_living_room.webp",
-    gallery: [
-      "/hero-bg.webp",
-      "/bg/Grow More Interior Hero Background.webp",
-      "/Grow More Interior Background.webp"
-    ]
+    ...project,
+    client: "Private client",
+    description: `${project.title} explores ${project.category.toLowerCase()} interior design through space planning, coordinated materials, custom furniture, and layered lighting. Contact our team to discuss a similar direction for your space.`,
+    heroImage: project.image,
+    gallery: [project.image],
   };
 }
 
@@ -46,12 +42,12 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
           <p className="text-[var(--color-primary)] tracking-widest text-sm uppercase">
             {project.category}
           </p>
-          <Link href="/projects" className="text-gray-400 hover:text-white uppercase tracking-widest text-xs border-b border-gray-600 hover:border-white pb-1 transition-all">
+          <Link href="/projects" className="text-gray-400 hover:text-primary uppercase tracking-widest text-xs border-b border-gray-600 hover:border-white pb-1 transition-all">
             Back to Projects
           </Link>
         </div>
         
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-16">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-foreground leading-tight mb-16">
           {project.title}
         </h1>
 
@@ -66,22 +62,22 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-24">
-          <div className="lg:col-span-1 border-t border-white/10 pt-8">
+          <div className="lg:col-span-1 border-t border-border pt-8">
             <div className="mb-8">
               <span className="text-gray-500 text-xs tracking-widest uppercase block mb-2">Client</span>
-              <p className="text-white font-serif text-lg">{project.client}</p>
+              <p className="text-foreground font-serif text-lg">{project.client}</p>
             </div>
             <div className="mb-8">
               <span className="text-gray-500 text-xs tracking-widest uppercase block mb-2">Location</span>
-              <p className="text-white font-serif text-lg">{project.location}</p>
+              <p className="text-foreground font-serif text-lg">{project.location}</p>
             </div>
             <div>
               <span className="text-gray-500 text-xs tracking-widest uppercase block mb-2">Year</span>
-              <p className="text-white font-serif text-lg">{project.year}</p>
+              <p className="text-foreground font-serif text-lg">{project.year}</p>
             </div>
           </div>
           
-          <div className="lg:col-span-3 border-t border-white/10 pt-8">
+          <div className="lg:col-span-3 border-t border-border pt-8">
             <h2 className="font-serif text-3xl mb-8">The <span className="text-[var(--color-primary)]">Vision</span></h2>
             <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-8">
               {project.description}
@@ -92,7 +88,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
                 ["Materials", "Premium stone, veneer, soft upholstery, warm metal accents, and durable finishes."],
                 ["Execution", "Coordinated civil work, custom furniture, lighting installation, styling, and handover."],
               ].map(([title, copy]) => (
-                <div key={title} className="border border-white/10 p-5">
+                <div key={title} className="border border-border p-5">
                   <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--color-primary)]">{title}</h3>
                   <p className="mt-3 text-sm leading-6 text-gray-400">{copy}</p>
                 </div>

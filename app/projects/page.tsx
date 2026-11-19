@@ -7,56 +7,7 @@ import CTASection from "@/components/CTASection";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-const allProjects = [
-  {
-    id: 1,
-    title: "Penthouse Horizon",
-    category: "Residential",
-    location: "New York, NY",
-    year: "2025",
-    image: "/hero_living_room.webp",
-  },
-  {
-    id: 2,
-    title: "The Noir Club",
-    category: "Commercial",
-    location: "Chicago, IL",
-    year: "2025",
-    image: "/bg/Grow More Interior Team Background.webp",
-  },
-  {
-    id: 3,
-    title: "Villa Aurelia",
-    category: "Luxury",
-    location: "Milan, Italy",
-    year: "2024",
-    image: "/hero-bg.webp",
-  },
-  {
-    id: 4,
-    title: "Zen Retreat",
-    category: "Residential",
-    location: "Kyoto, Japan",
-    year: "2024",
-    image: "/bg/Grow More Interior Hero Background.webp",
-  },
-  {
-    id: 5,
-    title: "Elysian Store",
-    category: "Commercial",
-    location: "Paris, France",
-    year: "2024",
-    image: "/Grow More Interior Background.webp",
-  },
-  {
-    id: 6,
-    title: "Opulence Manor",
-    category: "Luxury",
-    location: "London, UK",
-    year: "2023",
-    image: "/reference/reference-vintage-studio.jpg",
-  },
-];
+import { projects as allProjects } from "@/lib/projects";
 
 const categories = ["All", "Residential", "Commercial", "Luxury"];
 

@@ -1,12 +1,12 @@
 # Deployment and marketing handoff
 
-## Lead delivery (required)
-Set the server-only variables in `.env.example`. The webhook receives a JSON POST with `lead_id`, `name`, `phone`, `email`, `message`, `space`, `form_id`, and `received_at`, using a Bearer token and an Idempotency-Key. It must save the lead to your CRM/sheet or deliver the notification before returning 2xx. Deduplicate using lead_id. A timeout can mean delivery happened without confirmation; investigate provider logs before resubmitting. No personal data is logged by this endpoint.
+## Lead delivery
+The shared enquiry form (contact, enquiry and service pages) submits directly from the browser to `https://api.web3forms.com/submit` using the supplied Web3Forms access key. Web3Forms access keys are designed for public client-side integration. All existing contact/project fields are included. The form prevents duplicate clicks, displays provider/network errors, and sends visitors to `/thank-you` only after Web3Forms confirms success. A unique local lead ID is used for the success event; raw contact details are not sent to analytics.
 
-Configure Upstash Redis REST for the shared atomic limit (five attempts per IP and email per ten minutes). IP identity assumes Vercel's trusted x-real-ip header; configure the trusted proxy header before using another host. Missing configuration fails closed with an explicit call option; no conversion fires. Verify both forms reach the actual team inbox/CRM in production, and test rejected, slow and failed provider responses.
+The old `/api/lead` webhook/Redis route remains unused by the website form. Its environment variables are only needed if that legacy endpoint is used again. Confirm the supplied key's recipient inbox is verified in Web3Forms and test delivery from the deployed site. Direct WhatsApp contact remains available.
 
 ## GTM container GTM-5NQWM67T (required before ads)
-The website now uses GTM only. The former standalone GA4 configuration is removed. Until the container is published with a GA4 tag, analytics page views will pause.
+The website uses the standard GTM bootstrap in the document head, after consent defaults, with the noscript fallback first in the body. It does not wait for React hydration. The website uses GTM only. The former standalone GA4 configuration is removed. The public container endpoint returned HTTP 200 on 19 November 2026, but its published configuration had no measurement tags or GA4/Ads IDs. Until the container is published with a GA4 tag, analytics page views will pause. Website code cannot publish tags inside the GTM account.
 
 1. Create the GA4 Google tag for G-ETR1TXZHTG. Configure SPA page views once using enhanced measurement history changes; avoid a second history trigger if enabled there.
 2. Obtain the real AW-ID and conversion labels from Google Ads. Add the Google Ads Google tag and Conversion Linker. These identifiers were not supplied and are not invented in code.

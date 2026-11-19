@@ -1,7 +1,7 @@
 "use client";
 import { TimelineContent } from "@/components/ui/timeline-animation";
 import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
-import { ArrowRight, Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, MessageCircle, Mail } from "lucide-react";
 import { useRef } from "react";
 import Image from "next/image";
 
@@ -64,10 +64,8 @@ export default function AboutSection3() {
             </div>
             <div className="flex gap-4">
               {[
-                { icon: <Facebook className="w-4 h-4" />, href: "https://facebook.com/growmore" },
-                { icon: <Instagram className="w-4 h-4" />, href: "https://instagram.com/growmore" },
-                { icon: <Linkedin className="w-4 h-4" />, href: "https://linkedin.com/company/growmore" },
-                { icon: <Twitter className="w-4 h-4" />, href: "https://twitter.com/growmore" },
+                { icon: <MessageCircle className="w-4 h-4" />, href: "https://wa.me/9779840801600", label: "WhatsApp" },
+                { icon: <Mail className="w-4 h-4" />, href: "mailto:info@growmoreinterior.com", label: "Email" },
               ].map((social, i) => (
                 <TimelineContent
                   key={i}
@@ -76,6 +74,7 @@ export default function AboutSection3() {
                   timelineRef={heroRef}
                   customVariants={revealVariants}
                   href={social.href}
+                  aria-label={social.label}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 border border-border/60 bg-muted rounded-full flex items-center justify-center text-muted-foreground hover:text-primary transition-all duration-300 hover:border-primary"

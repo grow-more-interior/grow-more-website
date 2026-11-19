@@ -5,7 +5,12 @@ const failure = (error: string, status: number) => Response.json({ error }, { st
 
 export async function POST(request: Request) {
   const origin = request.headers.get("origin");
-  if (origin !== new URL(request.url).origin) return failure("Invalid request origin.", 403);
+  // Next.js may normalize request.url to localhost even when the browser uses
+  // 127.0.0.1. Host preserves the actual destination used by the browser.
+  const destination = new URL(request.url);
+  const host = request.headers.get("host");
+  if (host) destination.host = host;
+  if (origin !== destination.origin) return failure("Invalid request origin.", 403);
   if (!request.headers.get("content-type")?.includes("application/json")) return failure("JSON required.", 415);
   let body: Record<string, unknown>;
   try {

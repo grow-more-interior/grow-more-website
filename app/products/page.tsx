@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Callout, CollectionGrid, FAQSection, PageHero, SectionHeader } from "../components/PageSections";
 import { collections, spaces } from "../data/growmore";
 import { createMetadata } from "../seo";
@@ -10,7 +11,30 @@ export const metadata = createMetadata({
   keywords: ["interior design services Nepal", "modular kitchen design Nepal", "wardrobe design Kathmandu", "commercial interiors Nepal"],
 });
 
-export default function ProductsPage() {
+export default async function ProductsPage({ searchParams }: {
+  searchParams: Promise<{ room?: string | string[]; look?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const room = typeof params.room === "string" && spaces.includes(params.room) ? params.room : undefined;
+  const look = typeof params.look === "string" ? params.look : undefined;
+  const styleSlugs: Record<string, string> = {
+    Minimalist: "modern-minimalist", "Classical Luxury": "neo-classical",
+    Scandinavian: "scandinavian-cozy", Industrial: "industrial-loft",
+    "Art Deco": "art-deco", Japandi: "japandi-fusion",
+  };
+  const selectedStyle = look ? styleSlugs[look] : undefined;
+  const roomSlugs: Record<string, string[]> = {
+    "Corporate Office": ["corporate-excellence"],
+    "Retail Space": ["retail-luxe"],
+    Hospitality: ["industrial-loft", "retail-luxe", "art-deco", "japandi-fusion"],
+    "Outdoor Terrace": ["modern-minimalist", "scandinavian-cozy", "japandi-fusion"],
+  };
+  const visibleCollections = collections.filter((collection) => {
+    const matchesRoom = !room || (roomSlugs[room]
+      ? roomSlugs[room].includes(collection.slug)
+      : collection.category !== "Commercial Design");
+    return matchesRoom && (!selectedStyle || collection.slug === selectedStyle);
+  });
   return (
     <main className="bg-[#f7f4ee]">
       <PageHero
@@ -19,15 +43,19 @@ export default function ProductsPage() {
         copy="Explore interior concepts by design style, space type, material palette, and execution scope. We specialize in residential, commercial, modular, hospitality, and turnkey design in Nepal."
       />
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <SectionHeader eyebrow="Eight Collections" title="Browse by design style" copy="From modern minimalist duplexes to high-end commercial spaces, each concept is tailored to your brand or family lifestyle." />
-        <CollectionGrid />
+        <SectionHeader eyebrow="Design Collections" title={room ? `Design ideas for ${room.toLowerCase()}` : "Browse by design style"} copy="From modern minimalist duplexes to high-end commercial spaces, each concept is tailored to your brand or family lifestyle." />
+        {(room || selectedStyle) && <div className="mb-6 flex flex-wrap items-center gap-4">
+          <p role="status" className="text-sm">{visibleCollections.length} collections{room ? ` for ${room}` : ""}{selectedStyle ? ` · ${look}` : ""}</p>
+          <Link href="/products" className="text-sm font-semibold underline">Clear filters</Link>
+        </div>}
+        {visibleCollections.length ? <CollectionGrid items={visibleCollections} /> : <p>No collections match these filters. Clear filters to explore all designs.</p>}
       </section>
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="Design by Space" title="Spaces we design" copy="Click on a space to view specialized concepts, materials, and layouts." />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {spaces.map((space) => (
-              <a key={space} href={`/products?room=${encodeURIComponent(space)}`} className="rounded-lg border border-gray-200 bg-[#f7f4ee] p-5 text-sm font-bold text-[#1a1614] transition hover:border-[#C9A84C] hover:bg-white">
+              <a key={space} href={`/products?${new URLSearchParams({ room: space, ...(look && selectedStyle ? { look } : {}) }).toString()}`} aria-current={room === space ? "page" : undefined} className="rounded-lg border border-gray-200 bg-[#f7f4ee] p-5 text-sm font-bold text-[#1a1614] transition hover:border-[#C9A84C] hover:bg-white aria-[current=page]:border-[#C9A84C] aria-[current=page]:bg-white">
                 {space}
               </a>
             ))}
@@ -37,7 +65,7 @@ export default function ProductsPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader eyebrow="Design Overview" title="A balanced approach to aesthetics and function" />
         <div className="grid gap-5 md:grid-cols-3">
-          {collections.slice(0, 6).map((collection) => (
+          {visibleCollections.slice(0, 6).map((collection) => (
             <div key={collection.slug} className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
               <p className="text-xs font-bold uppercase tracking-widest text-[#C9A84C]">{collection.category}</p>
               <h3 className="mt-2 text-xl font-bold text-[#1a1614]">{collection.name}</h3>

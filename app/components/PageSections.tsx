@@ -56,10 +56,10 @@ export function SectionHeader({
   );
 }
 
-export function CollectionGrid() {
+export function CollectionGrid({ items = collections }: { items?: typeof collections }) {
   return (
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {collections.map((collection) => (
+      {items.map((collection) => (
         <Link
           href={`/collection/${collection.slug}`}
           key={collection.slug}
@@ -93,9 +93,9 @@ export function Callout() {
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight">Request layouts, pricing, and consultation.</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-white/70">Tell Grow More Interior about your space and project goals. Our team can assist with style direction, turnkey execution, and next steps.</p>
         </div>
-        <Link href="/enquiry" className="inline-flex w-fit items-center justify-center rounded-md bg-[#C9A84C] px-6 py-3 text-xs font-bold uppercase tracking-widest text-gray-950 transition hover:bg-[#a8893c]">
-          Send Enquiry
-        </Link>
+        <a href="https://wa.me/9779840801600" className="inline-flex w-fit items-center justify-center rounded-md bg-[#C9A84C] px-6 py-3 text-xs font-bold uppercase tracking-widest text-gray-950 transition hover:bg-[#a8893c]">
+          WhatsApp
+        </a>
       </div>
     </section>
   );

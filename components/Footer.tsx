@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Twitter, Linkedin, ArrowUpRight } from "lucide-react";
+import { MessageCircle, Mail, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -23,10 +23,8 @@ const services = [
 ];
 
 const socials = [
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: MessageCircle, href: "https://wa.me/9779840801600", label: "WhatsApp" },
+  { icon: Mail, href: "mailto:info@growmoreinterior.com", label: "Email" },
 ];
 
 export default function Footer() {
@@ -130,7 +128,7 @@ export default function Footer() {
             </a>
           </p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-background/60 transition-colors">
+            <Link href="/privacy-policy" className="hover:text-background/60 transition-colors">
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-background/60 transition-colors">

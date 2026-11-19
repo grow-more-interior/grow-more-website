@@ -35,7 +35,7 @@ const projects = [
     aspect: "aspect-[4/3]",
   },
   {
-    id: 4,
+    id: 7,
     title: "Celestial Office",
     category: "Commercial",
     location: "San Francisco, CA",

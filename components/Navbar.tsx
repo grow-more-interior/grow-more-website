@@ -228,6 +228,11 @@ export default function Navbar() {
                 onMouseLeave={() => setIsMegaMenuOpen(false)}
               >
                 <button
+                  type="button"
+                  aria-expanded={isMegaMenuOpen}
+                  aria-controls="desktop-products-menu"
+                  onClick={() => setIsMegaMenuOpen((open) => !open)}
+                  onKeyDown={(event) => { if (event.key === "Escape") setIsMegaMenuOpen(false); }}
                   className={`whitespace-nowrap flex items-center gap-1 text-[13px] xl:text-[15px] font-semibold tracking-wide transition-all duration-200 outline-none ${isActive("/products") || isActive("/collection") ? "text-[#C9A84C]" : "text-gray-800 hover:text-[#C9A84C]"
                     }`}
                 >
@@ -245,7 +250,10 @@ export default function Navbar() {
 
                 {/* Desktop Mega Menu Panel */}
                 <div
-                  className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[800px] bg-white border border-gray-100 shadow-2xl rounded-xl p-8 z-50 transition-all duration-300 grid grid-cols-4 gap-6 origin-top ${isMegaMenuOpen
+                  id="desktop-products-menu"
+                  onClick={(event) => { if ((event.target as Element).closest("a")) setIsMegaMenuOpen(false); }}
+                  inert={!isMegaMenuOpen}
+                  className={`absolute left-1/2 -translate-x-1/2 top-full w-[800px] bg-white border border-gray-100 shadow-2xl rounded-xl p-8 z-50 transition-all duration-300 grid grid-cols-4 gap-6 origin-top ${isMegaMenuOpen
                       ? "opacity-100 scale-100 pointer-events-auto"
                       : "opacity-0 scale-95 pointer-events-none"
                     }`}
@@ -415,9 +423,10 @@ export default function Navbar() {
 
             {/* Hamburger Button for Mobile */}
             <button
+              aria-label="Open navigation menu"
+              aria-expanded={isMobileDrawerOpen}
               onClick={() => setIsMobileDrawerOpen(true)}
               className="lg:hidden flex flex-col justify-center items-center w-8 h-8 rounded-md hover:bg-gray-100 transition-colors focus:outline-none"
-              aria-label="Open menu"
             >
               <span className="w-6 h-0.5 bg-gray-800 mb-1.5 transition-all"></span>
               <span className="w-6 h-0.5 bg-gray-800 mb-1.5 transition-all"></span>
@@ -459,6 +468,8 @@ export default function Navbar() {
 
       {/* Mobile Drawer (Drawer Scrim & Panel) */}
       <div
+        inert={!isMobileDrawerOpen}
+        onKeyDown={(event) => { if (event.key === "Escape") closeDrawer(); }}
         className={`fixed inset-0 z-50 lg:hidden transition-all duration-300 ${isMobileDrawerOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
       >
@@ -577,6 +588,7 @@ export default function Navbar() {
               {/* Products Accordion on Mobile */}
               <div>
                 <button
+                  aria-expanded={isMobileProductsOpen}
                   onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
                   className="w-full flex items-center justify-between text-base font-semibold text-gray-800 focus:outline-none"
                 >

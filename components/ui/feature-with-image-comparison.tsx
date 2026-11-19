@@ -2,15 +2,15 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Sofa, Utensils, BedDouble, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
 
 const categories = [
-  { id: "living-room", label: "Living Room", icon: Sofa },
-  { id: "dining-room", label: "Dining Room", icon: Utensils },
-  { id: "bedroom", label: "Bedroom", icon: BedDouble },
-  { id: "explore", label: "Explore More", icon: ArrowRight },
+  { id: "living-room", label: "Living Room", icon: Sofa, href: undefined },
+  { id: "dining-room", label: "Dining Room", icon: Utensils, href: "/products?room=Dining%20Room" },
+  { id: "bedroom", label: "Bedroom", icon: BedDouble, href: "/products?room=Bedroom" },
+  { id: "explore", label: "Explore More", icon: ArrowRight, href: "/projects" },
 ];
 
 const projects = [
@@ -55,20 +55,7 @@ export default function Feature() {
   const [activeCategory, setActiveCategory] = useState("living-room");
   const [activeProject, setActiveProject] = useState(projects[0]);
   const [sliderPosition, setSliderPosition] = useState(50);
-  const [isDragging, setIsDragging] = useState(false);
-
   const filteredProjects = projects.filter((p) => p.category === activeCategory);
-
-  const handleMove = (e: React.MouseEvent | React.TouchEvent | React.PointerEvent) => {
-    if (!isDragging) return;
-
-    const target = e.currentTarget as HTMLElement;
-    const rect = target.getBoundingClientRect();
-    const x = 'touches' in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
-    const relativeX = x - rect.left;
-    const position = Math.max(0, Math.min(100, (relativeX / rect.width) * 100));
-    setSliderPosition(position);
-  };
 
   return (
     <section className="w-full py-24 bg-transparent">
@@ -82,11 +69,14 @@ export default function Feature() {
 
         {/* Categories Pills */}
         <div className="flex flex-wrap justify-center gap-4 mt-12 mb-16">
-          {categories.map((cat) => (
+          {categories.map((cat) => cat.href ? (
+            <Link key={cat.id} href={cat.href} className="flex items-center gap-3 px-8 py-3 rounded-full text-sm font-light border border-transparent bg-white text-[#444] hover:bg-white/80">
+              <cat.icon size={18} aria-hidden="true" />{cat.label}
+            </Link>
+          ) : (
             <button
               key={cat.id}
               onClick={() => {
-                if (cat.id === 'explore') return;
                 setActiveCategory(cat.id);
                 const first = projects.find((p) => p.category === cat.id);
                 if (first) setActiveProject(first);
@@ -127,12 +117,19 @@ export default function Feature() {
 
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
         <div 
-          className="relative w-full aspect-21/9 md:aspect-24/10 overflow-hidden cursor-ew-resize select-none bg-muted"
-          onPointerMove={handleMove}
-          onPointerDown={() => setIsDragging(true)}
-          onPointerUp={() => setIsDragging(false)}
-          onPointerLeave={() => setIsDragging(false)}
+          className="relative w-full aspect-21/9 md:aspect-24/10 overflow-hidden cursor-ew-resize select-none bg-muted focus-within:ring-2 focus-within:ring-primary"
+
         >
+          <input
+            type="range"
+            min={0}
+            max={100}
+            value={sliderPosition}
+            onChange={(event) => setSliderPosition(Number(event.target.value))}
+            aria-label="Before and after image comparison"
+            aria-valuetext={`${sliderPosition}% before, ${100 - sliderPosition}% after`}
+            className="absolute inset-0 z-40 h-full w-full cursor-ew-resize opacity-0"
+          />
           {/* Before Image */}
           <div className="absolute inset-0">
             <Image

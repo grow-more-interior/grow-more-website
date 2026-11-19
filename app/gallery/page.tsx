@@ -105,14 +105,16 @@ export default function Gallery() {
         <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
           <AnimatePresence mode="popLayout">
             {filtered.map((img, i) => (
-              <motion.div
+              <motion.button
+                type="button"
+                aria-label={`View ${img.title}`}
                 key={img.src}
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="break-inside-avoid group relative overflow-hidden rounded-xl cursor-pointer"
+                className="block w-full break-inside-avoid group relative overflow-hidden rounded-xl cursor-pointer"
                 onClick={() => setLightbox(img.src)}
               >
                 <Image
@@ -134,7 +136,7 @@ export default function Gallery() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </motion.button>
             ))}
           </AnimatePresence>
         </motion.div>

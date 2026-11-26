@@ -73,16 +73,24 @@ export default function RootLayout({
         <script id="consent-defaults" dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];
           window.gtag = function(){ window.dataLayer.push(arguments); };
+          // Strict default for the EEA, UK and Switzerland.
           gtag('consent', 'default', {
             analytics_storage: 'denied', ad_storage: 'denied',
-            ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500
+            ad_user_data: 'denied', ad_personalization: 'denied',
+            region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'],
+            wait_for_update: 500
+          });
+          // Everyone else, including Nepal, is granted by default.
+          gtag('consent', 'default', {
+            analytics_storage: 'granted', ad_storage: 'granted',
+            ad_user_data: 'granted', ad_personalization: 'granted'
           });
           gtag('set', 'ads_data_redaction', true);
           try {
             var choice = localStorage.getItem('tracking-consent-v1');
-            if (choice === 'granted') gtag('consent', 'update', {
-              analytics_storage: 'granted', ad_storage: 'granted',
-              ad_user_data: 'granted', ad_personalization: 'granted'
+            if (choice === 'granted' || choice === 'denied') gtag('consent', 'update', {
+              analytics_storage: choice, ad_storage: choice,
+              ad_user_data: choice, ad_personalization: choice
             });
           } catch(e) {}
         ` }} />
